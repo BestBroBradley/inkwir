@@ -1,0 +1,33 @@
+{
+  "name": "inkwir",
+  "version": "1.0.0",
+  "description": "a free survey app for cool folks",
+  "main": "server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.9.2",
+    "passport": "^0.4.1",
+    "passport-local-mongoose": "^6.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BestBroBradley/inkwir.git"
+  },
+  "keywords": [
+    "survey",
+    "app"
+  ],
+  "author": "Allison Bradley, Nick Koch, Kate Hoth, Lori Arosteguy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BestBroBradley/inkwir/issues"
+  },
+  "homepage": "https://github.com/BestBroBradley/inkwir#readme"
+}

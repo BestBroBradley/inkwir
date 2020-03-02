@@ -7,8 +7,8 @@ const surveySchema = new Schema({
     category: { type: String, required: true },
     questions: [
         {
-            question1: { type: String, required: true },
-            answers1: [
+            q1: { type: String, required: true },
+            a1: [
                 {
                     a: { type: String, required: true },
                     b: { type: String, required: true },
@@ -16,8 +16,8 @@ const surveySchema = new Schema({
                     d: { type: String, required: false },
                 }
             ],
-            question2: { type: String, required: false },
-            answers2: [
+            q2: { type: String, required: false },
+            a2: [
                 {
                     a: { type: String, required: false },
                     b: { type: String, required: false },
@@ -25,8 +25,8 @@ const surveySchema = new Schema({
                     d: { type: String, required: false },
                 }
             ],
-            question3: { type: String, required: false },
-            answers3: [
+            q3: { type: String, required: false },
+            a3: [
                 {
                     a: { type: String, required: false },
                     b: { type: String, required: false },
@@ -34,8 +34,8 @@ const surveySchema = new Schema({
                     d: { type: String, required: false },
                 }
             ],
-            question4: { type: String, required: false },
-            answers4: [
+            q4: { type: String, required: false },
+            a4: [
                 {
                     a: { type: String, required: false },
                     b: { type: String, required: false },
@@ -43,8 +43,8 @@ const surveySchema = new Schema({
                     d: { type: String, required: false },
                 }
             ],
-            question5: { type: String, required: false },
-            answers5: [
+            q5: { type: String, required: false },
+            a5: [
                 {
                     a: { type: String, required: false },
                     b: { type: String, required: false },

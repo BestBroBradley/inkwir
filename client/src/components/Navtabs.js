@@ -16,34 +16,50 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <Link
-          to="/about"
-          className={location.pathname === "/about" ? "nav-link active" : "nav-link"}
+          to="/account"
+          className={location.pathname === "/account" ? "nav-link active" : "nav-link"}
         >
-          About
+          Account
         </Link>
       </li>
       <li className="nav-item">
         <Link
-          to="/blog"
-          className={location.pathname === "/blog" ? "nav-link active" : "nav-link"}
+          to="/create"
+          className={location.pathname === "/create" ? "nav-link active" : "nav-link"}
         >
-          Blog
+          Create
         </Link>
       </li>
       <li className="nav-item">
         <Link
-          to="/contact"
-          className={location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+          to="/loggedin"
+          className={location.pathname === "/loggedin" ? "nav-link active" : "nav-link"}
         >
-          Contact
+          Loggedin
         </Link>
       </li>
       <li className="nav-item">
         <Link
-          to="/contact/learn"
-          className={location.pathname === "/contact/learn" ? "nav-link active" : "nav-link"}
+          to="results"
+          className={location.pathname === "results" ? "nav-link active" : "nav-link"}
         >
-          Learn
+          Results
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="survey"
+          className={location.pathname === "survey" ? "nav-link active" : "nav-link"}
+        >
+          Survey
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="update"
+          className={location.pathname === "update" ? "nav-link active" : "nav-link"}
+        >
+          Update
         </Link>
       </li>
     </ul>

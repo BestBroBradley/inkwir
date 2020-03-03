@@ -41,6 +41,7 @@ function App() {
             <Section>
             <Menu />
               <NavTabs />
+            
               <Route exact path="/" component={Homepage} />
               <Route exact path="/account" component={Account} />
               <Route exact path="/create" component={Create} />
@@ -48,6 +49,7 @@ function App() {
               <Route exact path="/results" component={Results} />
               <Route exact path="/survey" component={Survey} />
               <Route exact path="/update" component={Update} />
+              
               <Footer />
             </Section>
           </Router>

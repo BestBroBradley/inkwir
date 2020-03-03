@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from 'semantic-ui-react'
 
-const buttonStyle = {
+const divStyle = {
     background: "(5,15,30)",
     height: 400,
     width: 400,
-    
+  
     opacity: "70%",
     textColor: "White"
 
@@ -14,16 +14,16 @@ const buttonStyle = {
 
 
 
-const TakeSurveyBtn = () => {
+const Taken = () => {
    
     return (
        
-        <Button style={buttonStyle} >
-        <h2>Start Survey Now!</h2>
-        </Button>
+        <div style={divStyle} >
+        <h2>Surveys Taken</h2>
+        </div>
         
     )
 }
 
 
-export default TakeSurveyBtn;
+export default Taken;

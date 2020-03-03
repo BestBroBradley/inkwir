@@ -25,3 +25,10 @@ code {
   text-emphasis-style: bold;
 }
 
+#welcome {
+  font-size: 20px;
+  color: lightgray;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+}

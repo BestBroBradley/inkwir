@@ -5,7 +5,8 @@ const buttonStyle = {
     background: "(5,15,30)",
     height: 400,
     width: 400,
-    
+    zIndex: "50",
+    xIndex: "30",
     opacity: "70%",
     textColor: "White"
 
@@ -14,16 +15,16 @@ const buttonStyle = {
 
 
 
-const TakeSurveyBtn = () => {
+const Created = () => {
    
     return (
        
         <Button style={buttonStyle} >
-        <h2>Start Survey Now!</h2>
+        <h2>Surveys Created</h2>
         </Button>
         
     )
 }
 
 
-export default TakeSurveyBtn;
+export default Created;

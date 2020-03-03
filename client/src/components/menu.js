@@ -1,32 +1,37 @@
-import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import React from 'react'
+import {
+  Container,
+  Divider,
+  Dropdown,
+  Grid,
+  Header,
+  Image,
+  List,
+  Menu,
+  Segment,
+} from 'semantic-ui-react'
 
-export default class Header extends Component {
-  state = { activeItem: 'home' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+const menu = () => (
+  <div>
+    <Menu fixed='top' inverted>
+      <Container>
+        <Menu.Item as='a' header>
+          <Image size='logo' src='logo-inkwir.png' style={{ marginRight: '1.5em' }} />
+        
+        </Menu.Item>
+        
 
-  render() {
-    const { activeItem } = this.state
+        <Dropdown item simple text='. . .'>
+          <Dropdown.Menu>
+            <Dropdown.Item>Update Account</Dropdown.Item>
+            <Dropdown.Item>Sign Out</Dropdown.Item>
+            
+          </Dropdown.Menu>
+        </Dropdown>
+      </Container>
+    </Menu>
+  </div>
+)
 
-    return (
-      <Menu inverted>
-        <Menu.Item
-          name=''
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item position= 'right'
-          name='Update Account'
-          active={activeItem === 'messages'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item position= 'right'
-          name='Sign Out'
-          active={activeItem === 'Sign Out'}
-          onClick={this.handleItemClick}
-        />
-      </Menu>
-    )
-  }
-}  
+export default menu

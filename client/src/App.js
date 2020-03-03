@@ -14,7 +14,6 @@ import Footer from './components/footer';
 import Menu from './components/menu';
 
 
-
 var sectionStyle = {
     marginTop: -20,
     width: "100%",

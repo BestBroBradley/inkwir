@@ -1,5 +1,6 @@
-const mongoose = require("mongoose")
-const bcrypt = require ("bcryptjs")
+const mongoose = require("mongoose");
+const bcrypt = require ("bcryptjs");
+const Schema = mongoose.Schema;
 
 const UserSchema = new mongoose.Schema ({
     username: {type: String, required: true},
@@ -11,7 +12,11 @@ const UserSchema = new mongoose.Schema ({
     age: {type: Number, required: false},
     nationality: {type: String, required: false},
     gender: {type: String, required: false},
-})
+    results: {
+        type: Schema.Types.ObjectId,
+        ref: "Review"
+    }
+});
 
 UserSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password)

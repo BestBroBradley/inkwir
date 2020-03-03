@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './components/utils/App.css';
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Account from "./components/pages/Account";
 import Create from "./components/pages/Create";
@@ -11,6 +10,10 @@ import Survey from "./components/pages/Survey";
 import Update from "./components/pages/Update";
 import Background from "./components/background_image.jpg";
 import NavTabs from "./components/Navtabs";
+import Footer from './components/footer';
+import Menu from './components/menu';
+
+
 
 var sectionStyle = {
     marginTop: -20,
@@ -18,6 +21,8 @@ var sectionStyle = {
     height: "1000px",
     backgroundImage: `url("${Background}")`
 };
+
+
 
 class Section extends Component {
     render(){
@@ -33,6 +38,7 @@ function App() {
         return (
           <Router>
             <Section>
+           
               <NavTabs />
               <Route exact path="/" component={Homepage} />
               <Route exact path="/account" component={Account} />
@@ -41,6 +47,7 @@ function App() {
               <Route exact path="/results" component={Results} />
               <Route exact path="/survey" component={Survey} />
               <Route exact path="/update" component={Update} />
+              <Footer />
             </Section>
           </Router>
         );

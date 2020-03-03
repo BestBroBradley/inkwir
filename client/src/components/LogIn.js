@@ -1,7 +1,9 @@
 import React from 'react'
-import { Button,  Form } from 'semantic-ui-react'
+import { Button, Form, Card } from 'semantic-ui-react'
 
 const LogIn = () => (
+  <Card>
+  
   <Form>
     <h3>Log In :</h3>
     <Form.Field>
@@ -15,6 +17,8 @@ const LogIn = () => (
     
     <Button color= 'pink' type='submit'>Log In</Button>
   </Form>
+  
+  </Card>
 )
 
 export default LogIn;

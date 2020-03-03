@@ -35,12 +35,12 @@ const answerTally = new Schema({
 
 })
 
-const resultSchema = new Schema({
-    surveyid: { type: Number, required: true },
-    responseTotal: { type: Number, required: true, default: 0 },
-    answerTally: answerTally
-})
+// const resultSchema = new Schema({
+//     surveyid: { type: Number, required: true },
+//     responseTotal: { type: Number, required: true, default: 0 },
+//     answerTally: answerTally
+// })
 
-const Result = mongoose.model("Result", resultSchema)
+const Result = mongoose.model("Result", answerTally)
 
 module.exports = Result

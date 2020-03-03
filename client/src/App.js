@@ -15,6 +15,7 @@ import Menu from './components/menu';
 
 
 
+
 var sectionStyle = {
     marginTop: -20,
     width: "100%",
@@ -38,7 +39,7 @@ function App() {
         return (
           <Router>
             <Section>
-           
+            <Menu />
               <NavTabs />
               <Route exact path="/" component={Homepage} />
               <Route exact path="/account" component={Account} />

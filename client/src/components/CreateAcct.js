@@ -1,7 +1,9 @@
 import React from 'react'
-import { Button,  Form } from 'semantic-ui-react'
+import { Button, Form, Card } from 'semantic-ui-react'
 
 const CreateAcct = () => (
+  <Card>
+    {/* <Card.Group itemsPerRow={2}> */}
   <Form>
     <h3>Create an Account:</h3>
     <Form.Field>
@@ -32,6 +34,8 @@ const CreateAcct = () => (
     </Form.Field>
     <Button color= 'pink' type='submit'>Submit</Button>
   </Form>
+  {/* </Card.Group> */}
+  </Card>
 )
 
 export default CreateAcct;

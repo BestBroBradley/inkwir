@@ -9,52 +9,52 @@ const [state, updateState] = useState({
   confirmPassword: false
 })
 
-const validateUsername = () => {
-  if (props.username.length > 1 && !validUsername) {
-      updateState({
-          ...state,
-          validUsername: true
-      });
-  }
-  if (props.username.length < 1 && validUsername) {
-      updateState({
-        ...state,
-          validUsername: false
-      });
-  }
-}
+// const validateUsername = () => {
+//   if (props.username.length > 1 && !validUsername) {
+//       updateState({
+//           ...state,
+//           validUsername: true
+//       });
+//   }
+//   if (props.username.length < 1 && validUsername) {
+//       updateState({
+//         ...state,
+//           validUsername: false
+//       });
+//   }
+// }
 
-const validatePassword = () => {
-  let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
-  let valid = strongPassword.test(props.password);
-  if (!validPassword && valid) {
-      updateState({
-        ...state,
-          validPassword: true
-      });
-  }
-  if (validPassword && !valid) {
-      updateState({
-        ...state,
-          validPassword: false,
-      });
-  }
-}
+// const validatePassword = () => {
+//   let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
+//   let valid = strongPassword.test(props.password);
+//   if (!validPassword && valid) {
+//       updateState({
+//         ...state,
+//           validPassword: true
+//       });
+//   }
+//   if (validPassword && !valid) {
+//       updateState({
+//         ...state,
+//           validPassword: false,
+//       });
+//   }
+// }
 
-const confirmPassword = () => {
-  if (props.password === props.confirmPassword && !confirmPassword && props.password) {
-      updateState({
-        ...state,
-          confirmPassword: true
-      });
-  }
-  if (props.password !== props.confirmPassword && confirmPassword) {
-      updateState({
-        ...state,
-          confirmPassword: false
-      });
-  }
-}
+// const confirmPassword = () => {
+//   if (props.password === props.confirmPassword && !confirmPassword && props.password) {
+//       updateState({
+//         ...state,
+//           confirmPassword: true
+//       });
+//   }
+//   if (props.password !== props.confirmPassword && confirmPassword) {
+//       updateState({
+//         ...state,
+//           confirmPassword: false
+//       });
+//   }
+// }
 
 return (
 <Card>

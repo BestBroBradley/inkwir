@@ -1,15 +1,20 @@
 import React from "react";
-import { Container, Button } from "semantic-ui-react";
-
+import { Container, Input, Button, Card } from "semantic-ui-react";
+import TakeSurvey  from "../components/TakeSurvey";
 function Survey() {
   return (
     <div>
-      <h1>Survey</h1>
-      <p>
-    <h2>Hi</h2>
-      </p>
+      <Container>
+        
+        <TakeSurvey />
+
+      </Container>
+
     </div>
+   
   );
 }
+
+       
 
 export default Survey;

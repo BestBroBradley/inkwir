@@ -92,7 +92,7 @@ return (
     </Form.Field>
     <Button color= 'pink' type='submit'>Submit</Button>
   </Form>
-  {/* </Card.Group> */}
+  
   </Card>
 )
 }

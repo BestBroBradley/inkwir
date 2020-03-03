@@ -1,7 +1,7 @@
 import React from "react";
-import  Menu from "../menu";
-import  LogIn  from "../LogIn";
-import CreateAcct  from "../CreateAcct";
+import  Menu from "../components/menu";
+import  LogIn  from "../components/LogIn";
+import CreateAcct  from "../components/CreateAcct";
 
 import { Grid, Container } from "semantic-ui-react";
 function Account() {

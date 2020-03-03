@@ -54,7 +54,11 @@ const surveySchema = new Schema({
             ]
         }
     ],
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now },
+    results: {
+        type: Schema.Types.ObjectId,
+        ref: "Result"
+    }
 });
 
 const Survey = mongoose.model("Survey", surveySchema);

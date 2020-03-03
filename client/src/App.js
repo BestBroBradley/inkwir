@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import './components/utils/App.css';
+import './styles/App.css';
+import './styles/footer.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Account from "./components/pages/Account";
-import Create from "./components/pages/Create";
-import Homepage from "./components/pages/Homepage";
-import Loggedin from "./components/pages/Loggedin";
-import Results from "./components/pages/Results";
-import Survey from "./components/pages/Survey";
-import Update from "./components/pages/Update";
-import Background from "./components/background_image.jpg";
+import Account from "./pages/Account";
+import Create from "./pages/Create";
+import Homepage from "./pages/Homepage";
+import Loggedin from "./pages/Loggedin";
+import Results from "./pages/Results";
+import Survey from "./pages/Survey";
+import Update from "./pages/Update";
+import Background from "./styles/images/background_image.jpg";
 import NavTabs from "./components/Navtabs";
 import Footer from './components/footer';
 import Menu from './components/menu';
-
-
 
 var sectionStyle = {
     marginTop: -20,
@@ -38,7 +37,7 @@ function App() {
         return (
           <Router>
             <Section>
-           
+            <Menu />
               <NavTabs />
               <Route exact path="/" component={Homepage} />
               <Route exact path="/account" component={Account} />
@@ -47,8 +46,8 @@ function App() {
               <Route exact path="/results" component={Results} />
               <Route exact path="/survey" component={Survey} />
               <Route exact path="/update" component={Update} />
-              <Footer />
             </Section>
+              <Footer />
           </Router>
         );
       };

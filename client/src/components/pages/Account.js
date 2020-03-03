@@ -18,6 +18,7 @@ function Account() {
         <Grid.Column>
           <LogIn />
         </Grid.Column>
+        
         <Grid.Column >
           <CreateAcct />
         </Grid.Column>

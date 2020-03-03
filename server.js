@@ -1,16 +1,24 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const session = require("express-session")
-const passport = require("./config/passport")
-const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const session = require("express-session")
+const passport = require("./config/passport")
+const logger = require ("morgan")
+const flash = require ("connect-flash")
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(logger("dev"))
+app.use(flash())
 app.use(express.static("public"))
+app.use(session({
+  secret: "keyboard cat",
+  resave: false,
+  saveUninitialized: true
+}))
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }))
 app.use(passport.initialize())
 app.use(passport.session())
 

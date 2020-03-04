@@ -7,8 +7,8 @@ router.route("/")
 
 router
   .route("/:id")
-  .get(surveyController.findById)
-  .put(surveyController.update)
+  .get(surveyController.getResults)
+  .put(surveyController.addResults)
   .delete(surveyController.remove);
 
 module.exports = router;

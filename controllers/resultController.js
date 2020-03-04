@@ -26,14 +26,5 @@ module.exports = {
           .then(dbModel => dbModel.remove())
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
-    },
-    addResults: function(req,res) {
-        db.Results
-          .create(req.body)
-          .then(dbModel => {
-            return db.Surveys.findOneAndUpdate({ _id: req.params.id }, { review: dbModel._id }, { new: true });
-          })
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
     }
 };

@@ -11,7 +11,7 @@ import Update from "./components/pages/Update";
 import Background from "./components/background_image.jpg";
 import NavTabs from "./components/Navtabs";
 import Footer from './components/footer';
-import Menu from './components/menu';
+// import Menu from './components/menu';
 
 
 var sectionStyle = {

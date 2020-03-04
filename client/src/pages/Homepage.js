@@ -20,7 +20,7 @@ function Homepage() {
                     <Grid.Column>
                         <LoginButton />
                     </Grid.Column>
-                    <Grid.Column>
+                    <Grid.Column id="mainButton">
                         <TakeSurvey />
                     </Grid.Column>
                 </Grid.Row>

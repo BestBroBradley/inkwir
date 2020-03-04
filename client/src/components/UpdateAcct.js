@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button,  Form, Card } from 'semantic-ui-react'
+import "../styles/index.css"
 
 const UpdateAcct = () => (
-<Card>
-  <Form>
+<Card id="updateAccount">
+  <Form  >
     <h3>Update Account:</h3>
     <Form.Field>
       <label>Username</label>
@@ -34,10 +35,10 @@ const UpdateAcct = () => (
       <label>Location</label>
       <input placeholder='Location' />
     </Form.Field>
-    <Button color= 'pink' type='submit'>Update</Button>
-    <Button color= 'pink' type='submit'>Log Out</Button>
+    <Button id="buttonClr" type='submit'>Update</Button>
+    
   </Form>
-  </Card>
+</Card>
 )
 
 

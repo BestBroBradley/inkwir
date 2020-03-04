@@ -24,3 +24,68 @@ code {
   text-align: center;
   text-emphasis-style: bold;
 }
+
+#menuBar {
+  background: rgb(5, 15, 30);
+}
+
+#SurveyCard {
+  background-color: rgb(5, 15, 30);
+  height: 100%;
+  width: 800px;
+  margin-left: 100px;
+  padding: 30px;
+  border: rgb(5, 15, 30) 5px;
+  color: black;
+}
+
+.ui.card {
+  background: transparent;
+  border-width: 0;
+}
+
+#updateAccount {
+  background-color: rgb(5, 15, 30);
+  height: 100%;
+  width: 500px;
+  padding: 20px;
+  opacity: 90%;
+}
+
+#questions {
+  background: rgb(5, 15, 30);
+  padding: 30px;
+  padding-bottom: 50px;
+  color: lightgray;
+  font-size: 40px;
+  border-radius: 10px;
+  border-color: rgb(180, 58, 58) 5px;
+  margin-bottom: 20px;
+  opacity: 90%;
+}
+
+.answers {
+  color: #ef291f;
+}
+
+#buttonClr {
+  background: #ef291f;
+  margin-right: 15px;
+  color: white;
+}
+
+#surveyLists {
+  font-size: 20;
+}
+
+#mainButton {
+  padding-left: -200px !important;
+}
+
+h3 {
+  color: #ef291f;
+}
+
+h1 {
+  color: white;
+}

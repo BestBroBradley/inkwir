@@ -13,7 +13,7 @@ import Background from "./styles/images/background_image.jpg";
 import NavTabs from "./components/Navtabs";
 import Footer from './components/footer';
 import Menu from './components/menu';
-import { UserContext } from './utils/UserContext';
+import UserContext from './utils/UserContext';
 import API from './utils/API'
 
 var sectionStyle = {
@@ -22,8 +22,6 @@ var sectionStyle = {
   height: "1000px",
   backgroundImage: `url("${Background}")`
 };
-
-
 
 class Section extends Component {
   render() {
@@ -38,18 +36,21 @@ class Section extends Component {
 function App() {
 
   const [userState, setUserState] = useState({
-
-    firstname: "",
-    lastname: "",
     email: "",
     username: "",
     password: "",
+    surveysMade: [],
+    surveysTaken: [],
+    age: 0,
+    nationality: "",
+    gender: "",
+    results: {},
     loggedIn: false,
     user: null,
     failureMessage: null
   })
 
-  const { firstname, lastname, email, username, password, loggedIn, user, failureMessage } = userState
+  const { email, username, password, loggedIn } = userState
 
   useEffect(() => {
     isLoggedIn();
@@ -147,22 +148,36 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange}>
-      <Router>
+    <Router>
         <Section>
+          <UserContext.Provider value={{userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange}}>
           <Menu />
           <NavTabs />
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/account" component={Account} />
-          <Route exact path="/create" component={Create} />
-          <Route exact path="/loggedin" component={Loggedin} />
-          <Route exact path="/results" component={Results} />
-          <Route exact path="/survey" component={Survey} />
-          <Route exact path="/update" component={Update} />
+          <Route exact path="/">
+            <Homepage/> 
+          </Route>
+          <Route exact path="/account">
+            <Account/> 
+          </Route>
+          <Route exact path="/create">
+            <Create/>
+          </Route> 
+          <Route exact path="/loggedin">
+            <Loggedin/>
+          </Route> 
+          <Route exact path="/results">
+            <Results/>
+          </Route>
+          <Route exact path="/survey">
+            <Survey />
+          </Route>
+          <Route exact path="/update">
+            <Loggedin/> 
+          </Route>
           <Footer />
+          </UserContext.Provider>
         </Section>
       </Router>
-    </UserContext.Provider>
   );
 };
 

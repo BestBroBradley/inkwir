@@ -1,11 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Button, Form, Card } from 'semantic-ui-react'
-import { UserContext } from "../utils/UserContext"
+import UserContext from "../utils/UserContext"
 
 const CreateAcct = () => {
 
-const data = useContext(UserContext)
-console.log(data)
+const test = useContext(UserContext)
 
 const [state, updateState] = useState({
   validFirstname: false,
@@ -20,57 +19,57 @@ const [state, updateState] = useState({
 
 const { validFirstname, validLastname, validEmail, validUsername, validPassword, confirmPassword, password, passwordMessage } = state
 
-// useEffect(() => {
-//   console.log(state)
-//   validatePassword()
-// }, [])
+useEffect(() => {
+  console.log(state)
+  validatePassword()
+}, [])
 
-// const validateUsername = () => {
-//   if (props.username.length > 1 && !validUsername) {
-//       updateState({
-//           ...state,
-//           validUsername: true
-//       });
-//   }
-//   if (props.username.length < 1 && validUsername) {
-//       updateState({
-//         ...state,
-//           validUsername: false
-//       });
-//   }
-// }
+const validateUsername = () => {
+  if (userState.username.length > 1 && !validUsername) {
+      updateState({
+          ...state,
+          validUsername: true
+      });
+  }
+  if (userState.username.length < 1 && validUsername) {
+      updateState({
+        ...state,
+          validUsername: false
+      });
+  }
+}
 
-// const validatePassword = () => {
-//   let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
-//   let valid = strongPassword.test(userState.password);
-//   if (!validPassword && valid) {
-//       updateState({
-//         ...state,
-//           validPassword: true
-//       });
-//   }
-//   if (validPassword && !valid) {
-//       updateState({
-//         ...state,
-//           validPassword: false,
-//       });
-//   }
-// }
+const validatePassword = () => {
+  let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
+  let valid = strongPassword.test(userState.password);
+  if (!validPassword && valid) {
+      updateState({
+        ...state,
+          validPassword: true
+      });
+  }
+  if (validPassword && !valid) {
+      updateState({
+        ...state,
+          validPassword: false,
+      });
+  }
+}
 
-// const confirmPassword = () => {
-//   if (props.password === props.confirmPassword && !confirmPassword && props.password) {
-//       updateState({
-//         ...state,
-//           confirmPassword: true
-//       });
-//   }
-//   if (props.password !== props.confirmPassword && confirmPassword) {
-//       updateState({
-//         ...state,
-//           confirmPassword: false
-//       });
-//   }
-// }
+const confirmPassword = () => {
+  if (userState.password === confirmPassword && !confirmPassword && props.password) {
+      updateState({
+        ...state,
+          confirmPassword: true
+      });
+  }
+  if (props.password !== props.confirmPassword && confirmPassword) {
+      updateState({
+        ...state,
+          confirmPassword: false
+      });
+  }
+}
 
 return (
 <Card>

@@ -4,7 +4,7 @@ import "../styles/index.css"
 
 
 export default class TakeSurvey extends Component {
-    state = {}
+    state = {};
     handleChange = (e, { value }) => this.setState({ value })
   
 render() {

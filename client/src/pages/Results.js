@@ -1,13 +1,14 @@
 import React from "react";
+import  { Chart } from "react-google-charts";
+import BarChart from "../components/BarChart";
 
 function Results() {
   return (
-    <div>
-      <h1>Results</h1>
-      <p>
-     This is the Results
-      </p>
-    </div>
+    
+     <Chart>
+
+     </Chart>
+    
   );
 }
 

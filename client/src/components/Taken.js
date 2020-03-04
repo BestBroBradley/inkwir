@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from 'semantic-ui-react'
 
-const buttonStyle = {
+const divStyle = {
     background: "rgb(5, 15, 30)",
     height: 400,
     width: 400,
@@ -13,16 +13,16 @@ const buttonStyle = {
 
 
 
-const LoginButton = () => {
+const Taken = () => {
    
     return (
        
-        <Button style={buttonStyle} >
-        <h2>Login/Create Account</h2>
+        <Button style={divStyle} >
+        <h2>Surveys Taken</h2>
         </Button>
         
     )
 }
 
 
-export default LoginButton;
+export default Taken;

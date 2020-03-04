@@ -13,16 +13,16 @@ const buttonStyle = {
 
 
 
-const LoginButton = () => {
+const Created = () => {
    
     return (
        
         <Button style={buttonStyle} >
-        <h2>Login/Create Account</h2>
+        <h2>Surveys Created</h2>
         </Button>
         
     )
 }
 
 
-export default LoginButton;
+export default Created;

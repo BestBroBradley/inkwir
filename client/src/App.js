@@ -35,6 +35,27 @@ class Section extends Component {
 
 function App() {
 
+        return (
+          <Router>
+            <Section>
+            <Menu />
+            <NavTabs />
+              <Route exact path="/" component={Homepage} />
+              <Route exact path="/account" component={Account} />
+              <Route exact path="/create" component={Create} />
+              <Route exact path="/loggedin" component={Loggedin} />
+              <Route exact path="/results" component={Results} />
+              <Route exact path="/survey" component={Survey} />
+              <Route exact path="/update" component={Update} /> 
+            </Section>
+              <Footer />
+          </Router>
+        );
+      };
+    
+      
+
+
   const [userState, setUserState] = useState({
     email: "",
     username: "",
@@ -180,6 +201,7 @@ function App() {
       </Router>
   );
 };
+
 
 
 export default App;

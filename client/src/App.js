@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './styles/App.css';
 import './styles/footer.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -13,44 +13,158 @@ import Background from "./styles/images/background_image.jpg";
 import NavTabs from "./components/Navtabs";
 import Footer from './components/footer';
 import Menu from './components/menu';
+import { UserContext } from './utils/UserContext';
+import API from './utils/API'
 
 var sectionStyle = {
-    marginTop: -20,
-    width: "100%",
-    height: "1000px",
-    backgroundImage: `url("${Background}")`
+  marginTop: -20,
+  width: "100%",
+  height: "1000px",
+  backgroundImage: `url("${Background}")`
 };
 
 
 
 class Section extends Component {
-    render(){
-        return (
-            <section style={sectionStyle}>
-                {this.props.children}
-            </section>
-        );
-    }
+  render() {
+    return (
+      <section style={sectionStyle}>
+        {this.props.children}
+      </section>
+    );
+  }
 }
 
 function App() {
-        return (
-          <Router>
-            <Section>
-            <Menu />
-              <NavTabs />
-              <Route exact path="/" component={Homepage} />
-              <Route exact path="/account" component={Account} />
-              <Route exact path="/create" component={Create} />
-              <Route exact path="/loggedin" component={Loggedin} />
-              <Route exact path="/results" component={Results} />
-              <Route exact path="/survey" component={Survey} />
-              <Route exact path="/update" component={Update} />
-            </Section>
-              <Footer />
-          </Router>
-        );
-      };
-    
-      
+
+  const [userState, setUserState] = useState({
+
+    firstname: "",
+    lastname: "",
+    email: "",
+    username: "",
+    password: "",
+    loggedIn: false,
+    user: null,
+    failureMessage: null
+  })
+
+  const { firstname, lastname, email, username, password, loggedIn, user, failureMessage } = userState
+
+  useEffect(() => {
+    isLoggedIn();
+  }, [])
+
+  const handleInputChange = event => {
+    const value = event.target.value;
+    const name = event.target.name;
+    setUserState({
+      ...userState,
+      [name]: value
+    });
+  };
+
+  const handleLogin = event => {
+    event.preventDefault();
+    if (username && password) {
+      API.login({
+        username: username,
+        password: password
+      }).then(user => {
+        if (user.data.loggedIn) {
+          setUserState({
+            ...userState,
+            loggedIn: true,
+            user: user.data.user
+          });
+          console.log("log in successful");
+          window.location.href = '/profile';
+        } else {
+          console.log("Something went wrong :(")
+          console.log(user);
+        }
+      });
+    }
+  }
+
+  const handleSignup = event => {
+    event.preventDefault();
+    if (username && password) {
+      API.signup({
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        username: username,
+        password: password
+      }).then(user => {
+        if (user.data.loggedIn) {
+          setUserState({
+            ...userState,
+            loggedIn: true,
+            user: user.data.user
+          });
+          console.log("log in successful");
+          window.location.href = '/profile';
+        } else {
+          console.log("something went wrong :(")
+          console.log(user.data);
+          setUserState({
+            ...userState,
+            failureMessage: user.data
+          })
+        }
+      });
+    }
+  }
+
+  const isLoggedIn = () => {
+    if (!loggedIn) {
+      API.isLoggedIn().then(user => {
+        if (user.data.loggedIn) {
+          setUserState({
+            ...userState,
+            loggedIn: true,
+            user: user.data.user
+          });
+        } else {
+          console.log(user.data.message);
+        }
+      })
+    }
+  }
+
+  const logout = () => {
+    if (loggedIn) {
+      API.logout().then(() => {
+        console.log("logged out successfully");
+        setUserState({
+          ...userState,
+          loggedIn: false,
+          user: null
+        })
+      })
+    }
+  }
+
+  return (
+    <UserContext.Provider value={userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange}>
+      <Router>
+        <Section>
+          <Menu />
+          <NavTabs />
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/account" component={Account} />
+          <Route exact path="/create" component={Create} />
+          <Route exact path="/loggedin" component={Loggedin} />
+          <Route exact path="/results" component={Results} />
+          <Route exact path="/survey" component={Survey} />
+          <Route exact path="/update" component={Update} />
+          <Footer />
+        </Section>
+      </Router>
+    </UserContext.Provider>
+  );
+};
+
+
 export default App;

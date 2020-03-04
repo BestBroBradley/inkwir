@@ -1,5 +1,5 @@
 import React from "react";
-import CreateSurvey from "../CreateSurveyCard";
+import CreateSurvey from "../components/CreateSurveyCard";
 import { Container, Grid} from "semantic-ui-react";
 
 function Create() {

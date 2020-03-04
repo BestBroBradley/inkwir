@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Button, Form, Card } from 'semantic-ui-react'
+import { UserContext } from "../utils/UserContext"
 
 const CreateAcct = () => {
 
+const data = useContext(UserContext)
+console.log(data)
+
 const [state, updateState] = useState({
+  validFirstname: false,
+  validLastname: false,
+  validEmail: false,
   validUsername: false,
   validPassword: false,
-  confirmPassword: false
+  confirmPassword: false,
+  password: "",
+  passwordMessage: ""
 })
+
+const { validFirstname, validLastname, validEmail, validUsername, validPassword, confirmPassword, password, passwordMessage } = state
+
+// useEffect(() => {
+//   console.log(state)
+//   validatePassword()
+// }, [])
 
 // const validateUsername = () => {
 //   if (props.username.length > 1 && !validUsername) {
@@ -26,7 +42,7 @@ const [state, updateState] = useState({
 
 // const validatePassword = () => {
 //   let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
-//   let valid = strongPassword.test(props.password);
+//   let valid = strongPassword.test(userState.password);
 //   if (!validPassword && valid) {
 //       updateState({
 //         ...state,

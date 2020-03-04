@@ -1,9 +1,9 @@
 import React from "react";
 import {Grid, Container} from "semantic-ui-react";
-import TakeSurvey from "../../components/TakeSurveybtn";
-import Taken from "../../components/Taken";
-import Status from "../../components/Status";
-import Created from "../../components/Created";
+import TakeSurvey from "../components/TakeSurveybtn";
+import Taken from "../components/Taken";
+import Status from "../components/Status";
+import Created from "../components/Created";
 
 function Loggedin() {
     return (

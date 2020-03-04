@@ -1,7 +1,7 @@
 import React from "react";
 
-import LoginButton from "../LoginButton";
-import TakeSurvey from "../TakeSurveybtn";
+import LoginButton from "../components/LoginButton";
+import TakeSurvey from "../components/TakeSurveybtn";
 import {Grid, Container} from "semantic-ui-react";
 
 

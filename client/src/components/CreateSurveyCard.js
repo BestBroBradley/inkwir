@@ -5,7 +5,11 @@ const CreateSurvey= () => (
   <div>
     <Card color='pink'> 
       <h3>Create a New Survey!</h3>
-      <Input fluid placeholder='Survey Topic:' />
+      <Input fluid placeholder='Survey Title:' />
+      <br/>
+      <Input fluid placeholder='Category:' />
+      <br/>
+      <Input fluid placeholder='Author:' />
       <br/>
     <Input fluid placeholder='Enter a QUESTION here ...' />
       <br/>

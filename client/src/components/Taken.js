@@ -6,7 +6,7 @@ const divStyle = {
     height:400,
     width:400,
   
-    opacity: "70%",
+    opacity: "50%",
     textColor: "White"
 
 } 

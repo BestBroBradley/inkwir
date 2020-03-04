@@ -38,14 +38,14 @@ function App() {
           <Router>
             <Section>
             <Menu />
-              {/* {/* <NavTabs /> */}
+            <NavTabs />
               <Route exact path="/" component={Homepage} />
               <Route exact path="/account" component={Account} />
               <Route exact path="/create" component={Create} />
               <Route exact path="/loggedin" component={Loggedin} />
               <Route exact path="/results" component={Results} />
               <Route exact path="/survey" component={Survey} />
-              <Route exact path="/update" component={Update} /> */}
+              <Route exact path="/update" component={Update} /> 
             </Section>
               <Footer />
           </Router>

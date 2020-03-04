@@ -11,7 +11,7 @@ const SurveyStatus = () => (
      <h5>Complete 10 surveys to unlock the
        ability to create your own surveys!</h5>
       
-  <Progress color='pink' value='3' total='10' progress='ratio' />
+  <Progress class='progress' color='pink' value='3' total='10' progress='ratio' />
      <h4 color= 'grey'>Create your own surveys!</h4> 
   </Card>
 </div>

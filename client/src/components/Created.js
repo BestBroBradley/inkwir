@@ -2,13 +2,11 @@ import React from "react";
 import { Button } from 'semantic-ui-react'
 
 const buttonStyle = {
-    background: "(5,15,30)",
+    background: "rgb(5, 15, 30)",
     height: 400,
     width: 400,
-    zIndex: "50",
-    xIndex: "30",
-    opacity: "70%",
-    textColor: "White"
+    opacity: "90%",
+    color: "#ef291f"
 
 } 
 

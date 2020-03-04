@@ -118,7 +118,7 @@ const passwordMessage = () => {
 
 return (
 <Card>
-  <Form onSubmit={state.validEmail, state.validUsername, state.validPassword, state.confirmPassword ? handleSignup : (event) => (event.preventDefault())} >
+  <Form onSubmit={state.validEmail && state.validUsername && state.validPassword && state.confirmPassword ? handleSignup : (event) => (event.preventDefault())} >
     <h3>Create an Account:</h3>
     <Form.Field>
       <label>Email</label>

@@ -23,10 +23,12 @@ router.post("/signup", function(req, res, next) {
     }
     if (!user) {
       let newUser = new db.Users({
-        email: req.body.email,
-        
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        email: req.body.email,
+        age: req.body.age,
+        nationality: req.body.nationality,
+        gender: req.body.gender
       })
       newUser.password = newUser.generateHash(req.body.password);
       newUser.save(function(err) {

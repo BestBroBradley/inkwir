@@ -3,7 +3,7 @@ import { Input, Form, Radio, Button } from 'semantic-ui-react';
 
 
 export default class TakeSurvey extends Component {
-    state = {}
+    state = {};
     handleChange = (e, { value }) => this.setState({ value })
   
 render() {

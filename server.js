@@ -28,8 +28,11 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
-
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/", { useNewUrlParser: true}, function(err) {
+    if (err) throw err;
+    console.log(`🐆  mongoose connection successful 🐆`);
+    app.listen(PORT, (err)=> {
+        if (err) throw err;
+        console.log(`🌎  connected on port ${PORT} 🌍`)
+    });
 });

@@ -50,7 +50,7 @@ function App() {
     failureMessage: null
   })
 
-  const { email, username, password, loggedIn } = userState
+  const { email, username, password, age, nationality, gender, loggedIn } = userState
 
   useEffect(() => {
     isLoggedIn();
@@ -90,11 +90,15 @@ function App() {
 
   const handleSignup = event => {
     event.preventDefault();
+    console.log(`Received ${userState}`)
     if (username && password) {
       API.signup({
         email: email,
         username: username,
-        password: password
+        password: password,
+        age: age,
+        nationality: nationality,
+        gender: gender
       }).then(user => {
         if (user.data.loggedIn) {
           setUserState({
@@ -170,7 +174,7 @@ function App() {
             <Survey />
           </Route>
           <Route exact path="/update">
-            <Loggedin/> 
+            <Update/> 
           </Route>
           <Footer />
           </UserContext.Provider>
@@ -178,6 +182,5 @@ function App() {
       </Router>
   );
 };
-
 
 export default App;

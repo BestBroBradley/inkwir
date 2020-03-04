@@ -4,7 +4,7 @@ import UserContext from "../utils/UserContext"
 
 const CreateAcct = () => {
 
-const {userState, handleInputChange, handleLogin, handleSignup, isLoggedIn, logout } = useContext(UserContext)
+const {userState, handleInputChange, handleLogin, handleSignup, logout } = useContext(UserContext)
 
 const [state, updateState] = useState({
   validEmail: false,
@@ -16,37 +16,28 @@ const [state, updateState] = useState({
 })
 
 useEffect(() => {
-  console.log(state)
   validatePassword()
+  confirmPassword()
   passwordMessage()
   validateEmail()
-  validUsername()
-},)
+  validateUsername()
+},[userState])
 
-const validUsername = ()=> {
-  if(userState.username.length > 4  && !validUsername ) {
-      updateState({
-          ...state,
-          validUsername: true
-      });
-  }
-
-  if(userState.username.length < 4  && validUsername) {
-      updateState({
-        ...state,
-          validUsername: false
-      });
-  }
+const handleConfirm = (event) => {
+    updateState({
+      ...state,
+      password: event.target.value
+    })
 }
 
 const validateUsername = () => {
-  if (userState.username.length > 1 && !validUsername) {
+  if (userState.username.length > 1 && !state.validUsername) {
       updateState({
           ...state,
           validUsername: true
       });
   }
-  if (userState.username.length < 1 && validUsername) {
+  if (userState.username.length < 1 && state.validUsername) {
       updateState({
         ...state,
           validUsername: false
@@ -89,7 +80,7 @@ const validatePassword = () => {
 }
 
 const confirmPassword = () => {
-  if (state.confirmPassword && state.password !== "" && userState.password === state.password) {
+  if (!state.confirmPassword && state.password !== "" && userState.password === state.password) {
       updateState({
         ...state,
           confirmPassword: true
@@ -118,7 +109,8 @@ const passwordMessage = () => {
       });
   }
   if (state.passwordMessage === message && userState.password === "") {
-      this.setState({
+      updateState({
+        ...state,
           passwordMessage: ""
       });
   } 
@@ -126,37 +118,37 @@ const passwordMessage = () => {
 
 return (
 <Card>
-  <Form>
+  <Form onSubmit={state.validEmail, state.validUsername, state.validPassword, state.confirmPassword ? handleSignup : (event) => (event.preventDefault())} >
     <h3>Create an Account:</h3>
     <Form.Field>
       <label>Email</label>
-      <input placeholder='Email' />
+      <input value={userState.email} placeholder='Email' name="email" onChange={handleInputChange}/>
     </Form.Field>
     <Form.Field>
       <label>Username</label>
-      <input placeholder='Username' />
+      <input value={userState.username} placeholder='Username' name="username" onChange={handleInputChange}/>
     </Form.Field>
     <Form.Field>
       <label>Password</label>
-      <input placeholder='Password' />
+      <input placeholder='Password' value={userState.password} name="password" onChange={handleInputChange}/>
     </Form.Field>
     <Form.Field>
       <label>Confirm Password</label>
-      <input placeholder='Confirm Password' />
+      <input value={state.password} placeholder='Confirm Password' name="password" onChange={handleConfirm}/>
     </Form.Field>
     <h3>Demographics:</h3>
     <h5>(for survey reference only)</h5>
     <Form.Field>
       <label>Age</label>
-      <input placeholder='Age'/>
+      <input value={userState.age} placeholder='Age' name="age" onChange={handleInputChange}/>
     </Form.Field>
     <Form.Field>
       <label>Gender</label>
-      <input placeholder='Gender' />
+      <input value={userState.gender} placeholder='Gender' name="gender" onChange={handleInputChange}/>
     </Form.Field>
     <Form.Field>
       <label>Location</label>
-      <input placeholder='Location' />
+      <input placeholder='Location' value={userState.nationality} name="nationality" onChange={handleInputChange}/>
     </Form.Field>
     <Button color= 'pink' type='submit'>Submit</Button>
   </Form>

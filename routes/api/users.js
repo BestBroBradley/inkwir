@@ -15,14 +15,16 @@ router.post("/login", passport.authenticate("local", {
 });
 
 router.post("/signup", function(req, res, next) {
-  db.User.findOne({username: req.body.username}, function(err, user) {
+  db.Users.findOne({username: req.body.username}, function(err, user) {
     if (err) throw err;
     if (user) {
       console.log("user already exists")
       return res.json("user already exists");
     }
     if (!user) {
-      let newUser = new db.User({
+      let newUser = new db.Users({
+        email: req.body.email,
+        
         username: req.body.username,
         password: req.body.password
       })
@@ -60,7 +62,7 @@ router.get("/logout", authMiddleware.logoutUser, function(req, res, next) {
 });
 
 router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
-  db.User.findByIdAndUpdate(req.user._id).populate('todos').then((user) => {
+  db.Users.findByIdAndUpdate(req.user._id).populate('todos').then((user) => {
     res.json(user);
   }).catch((err) => {
     res.json(err);

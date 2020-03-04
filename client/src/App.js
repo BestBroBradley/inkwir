@@ -92,8 +92,6 @@ function App() {
     event.preventDefault();
     if (username && password) {
       API.signup({
-        firstname: firstname,
-        lastname: lastname,
         email: email,
         username: username,
         password: password

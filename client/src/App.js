@@ -65,12 +65,11 @@ function App() {
     });
   };
 
-  const handleLogin = event => {
-    event.preventDefault();
-    if (username && password) {
+  const handleLogin = ((un, pw) => {
+    if (un && pw) {
       API.login({
-        username: username,
-        password: password
+        username: un,
+        password: pw
       }).then(user => {
         if (user.data.loggedIn) {
           setUserState({
@@ -86,7 +85,7 @@ function App() {
         }
       });
     }
-  }
+  })
 
   const handleSignup = event => {
     event.preventDefault();

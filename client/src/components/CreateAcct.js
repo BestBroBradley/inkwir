@@ -4,7 +4,7 @@ import UserContext from "../utils/UserContext"
 
 const CreateAcct = () => {
 
-const {userState, handleInputChange, handleLogin, handleSignup, logout } = useContext(UserContext)
+const {userState, handleInputChange, handleSignup } = useContext(UserContext)
 
 const [state, updateState] = useState({
   validEmail: false,

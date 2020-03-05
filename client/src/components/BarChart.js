@@ -12,7 +12,7 @@ const BarChart = () => (
     chartType="BarChart"
     loader={<div>Loading Chart</div>}
     data={[
-      ['Q1', 'A1', 'A2','A3','A4'],
+      ['City', '2010 Population', '2000 Population'],
       ['New York City, NY', 8175000, 8008000],
       ['Los Angeles, CA', 3792000, 3694000],
       ['Chicago, IL', 2695000, 2896000],

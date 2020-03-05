@@ -64,6 +64,10 @@ code {
   border-color: rgb(5, 15, 30);
 }
 
+.ui.form {
+  border-color: rgb(5, 15, 30) !important;
+}
+
 #updateAccount {
   background-color: rgb(5, 15, 30);
   border-color: rgb(5, 15, 30);

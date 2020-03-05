@@ -125,8 +125,8 @@ const passwordMessage = () => {
 }
 
 return (
-<Card>
-  <Form>
+<Card id='createAcctCard'>
+  <Form >
     <h3>Create an Account:</h3>
     <Form.Field>
       <label>Email</label>

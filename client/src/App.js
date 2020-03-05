@@ -155,7 +155,10 @@ function App() {
                 <Section>
                     <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
                         <Menu />
-                        <NavTabs />
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <NavTabs style="padding-top:20px"/>
                         <Route exact path="/">
                             <Homepage />
                         </Route>

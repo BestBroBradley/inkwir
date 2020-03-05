@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Form, Card } from 'semantic-ui-react'
 
 const LogIn = () => (
-  <Card>
+  <Card  id="logInCard">
   
   <Form>
     <h3>Log In :</h3>

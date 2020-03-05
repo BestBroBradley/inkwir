@@ -3,6 +3,7 @@ import { Button, Form, Card } from 'semantic-ui-react'
 import UserContext from "../utils/UserContext"
 
 
+
 const LogIn = () => {
   const { handleLogin } = useContext(UserContext)
 
@@ -25,6 +26,7 @@ const LogIn = () => {
 
   return (
   <Card>
+
   <Form>
     <h3>Log In :</h3>
     <Form.Field>

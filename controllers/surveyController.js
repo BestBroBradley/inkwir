@@ -20,17 +20,27 @@ module.exports = {
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     },
-    update: function(req,res) {
-        db.Surveys
-          .findOneAndUpdate({ _id: req.params.id }, req.body)
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-    },
     remove: function(req,res) {
         db.Surveys
           .findById({ _id: req.params.id })
           .then(dbModel => dbModel.remove())
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
-    }
+    },
+    addResults: function(req,res) {
+      db.Results
+        .create(req.body)
+        .then(dbModel => {
+          return db.Surveys.findOneAndUpdate({ _id: req.params.id }, { results: dbModel._id }, { new: true });
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
+    getResults: function(req,res) {
+        db.Surveys
+          .findOne({ _id: req.params.id })
+          .populate("results")
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+  }
 };

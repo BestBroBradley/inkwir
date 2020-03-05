@@ -17,173 +17,170 @@ import UserContext from './utils/UserContext';
 import API from './utils/API'
 
 var sectionStyle = {
-    marginTop: -20,
-    width: "100%",
-    height: "1000px",
-    backgroundImage: `url("${Background}")`
+  marginTop: -20,
+  width: "100%",
+  height: "1000px",
+  backgroundImage: `url("${Background}")`
 };
 
 class Section extends Component {
-    render() {
-        return (
-            <section style={sectionStyle}>
-                {this.props.children}
-            </section>
-        );
-    }
+  render() {
+    return (
+      <section style={sectionStyle}>
+        {this.props.children}
+      </section>
+    );
+  }
 }
 
 function App() {
 
+  const [userState, setUserState] = useState({
+    email: "",
+    username: "",
+    password: "",
+    surveysMade: [],
+    surveysTaken: [],
+    age: 0,
+    nationality: "",
+    gender: "",
+    results: {},
+    loggedIn: false,
+    user: null,
+    failureMessage: null
+  })
 
+  const { email, username, password, age, nationality, gender, loggedIn } = userState
 
+  useEffect(() => {
+    isLoggedIn();
+  }, [])
 
-    const [userState, setUserState] = useState({
-        email: "",
-        username: "",
-        password: "",
-        surveysMade: [],
-        surveysTaken: [],
-        age: 0,
-        nationality: "",
-        gender: "",
-        results: {},
-        loggedIn: false,
-        user: null,
-        failureMessage: null
-    })
+  const handleInputChange = event => {
+    const value = event.target.value;
+    const name = event.target.name;
+    setUserState({
+      ...userState,
+      [name]: value
+    });
+  };
 
-    const { email, username, password, loggedIn } = userState
-
-    useEffect(() => {
-        isLoggedIn();
-    }, [])
-
-    const handleInputChange = event => {
-        const value = event.target.value;
-        const name = event.target.name;
-        setUserState({
+  const handleLogin = ((un, pw) => {
+    if (un && pw) {
+      API.login({
+        username: un,
+        password: pw
+      }).then(user => {
+        if (user.data.loggedIn) {
+          setUserState({
             ...userState,
-            [name]: value
-        });
-    };
-
-    const handleLogin = event => {
-        event.preventDefault();
-        if (username && password) {
-            API.login({
-                username: username,
-                password: password
-            }).then(user => {
-                if (user.data.loggedIn) {
-                    setUserState({
-                        ...userState,
-                        loggedIn: true,
-                        user: user.data.user
-                    });
-                    console.log("log in successful");
-                    window.location.href = '/profile';
-                } else {
-                    console.log("Something went wrong :(")
-                    console.log(user);
-                }
-            });
+            loggedIn: true,
+            user: user.data.user
+          });
+          console.log("log in successful");
+          window.location.href = '/profile';
+        } else {
+          console.log("Something went wrong :(")
+          console.log(user);
         }
+      });
     }
+  })
 
-    const handleSignup = event => {
-        event.preventDefault();
-        if (username && password) {
-            API.signup({
-
-                email: email,
-                username: username,
-                password: password
-            }).then(user => {
-                if (user.data.loggedIn) {
-                    setUserState({
-                        ...userState,
-                        loggedIn: true,
-                        user: user.data.user
-                    });
-                    console.log("log in successful");
-                    window.location.href = '/profile';
-                } else {
-                    console.log("something went wrong :(")
-                    console.log(user.data);
-                    setUserState({
-                        ...userState,
-                        failureMessage: user.data
-                    })
-                }
-            });
+  const handleSignup = event => {
+    event.preventDefault();
+    console.log(`Received ${userState}`)
+    if (username && password) {
+      API.signup({
+        email: email,
+        username: username,
+        password: password,
+        age: age,
+        nationality: nationality,
+        gender: gender
+      }).then(user => {
+        if (user.data.loggedIn) {
+          setUserState({
+            ...userState,
+            loggedIn: true,
+            user: user.data.user
+          });
+          console.log("log in successful");
+          window.location.href = '/profile';
+        } else {
+          console.log("something went wrong :(")
+          console.log(user.data);
+          setUserState({
+            ...userState,
+            failureMessage: user.data
+          })
         }
+      }
+      )
     }
+  }
 
-    const isLoggedIn = () => {
-        if (!loggedIn) {
-            API.isLoggedIn().then(user => {
-                if (user.data.loggedIn) {
-                    setUserState({
-                        ...userState,
-                        loggedIn: true,
-                        user: user.data.user
-                    });
-                } else {
-                    console.log(user.data.message);
-                }
-            })
+  const isLoggedIn = () => {
+    if (!loggedIn) {
+      API.isLoggedIn().then(user => {
+        if (user.data.loggedIn) {
+          setUserState({
+            ...userState,
+            loggedIn: true,
+            user: user.data.user
+          });
+        } else {
+          console.log(user.data.message);
         }
+      })
     }
+  }
 
-    const logout = () => {
-        if (loggedIn) {
-            API.logout().then(() => {
-                console.log("logged out successfully");
-                setUserState({
-                    ...userState,
-                    loggedIn: false,
-                    user: null
-                })
-            })
-        }
+  const logout = () => {
+    if (loggedIn) {
+      API.logout().then(() => {
+        console.log("logged out successfully");
+        setUserState({
+          ...userState,
+          loggedIn: false,
+          user: null
+        })
+      })
     }
+  }
+  
+  return (
+    <Router>
+      <Section>
+        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
+          <Menu />
+          <NavTabs />
+          <Route exact path="/">
+            <Homepage />
+          </Route>
+          <Route exact path="/account">
+            <Account />
+          </Route>
+          <Route exact path="/create">
+            <Create />
+          </Route>
+          <Route exact path="/loggedin">
+            <Loggedin />
+          </Route>
+          <Route exact path="/results">
+            <Results />
+          </Route>
+          <Route exact path="/survey">
+            <Survey />
+          </Route>
+          <Route exact path="/update">
+            <Update />
+          </Route>
+          <Footer />
+        </UserContext.Provider>
+      </Section>
+    </Router>
+  )
+};
 
-
-        return (
-            <Router>
-                <Section>
-                    <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
-                        <Menu />
-                        <NavTabs />
-                        <Route exact path="/">
-                            <Homepage />
-                        </Route>
-                        <Route exact path="/account">
-                            <Account />
-                        </Route>
-                        <Route exact path="/create">
-                            <Create />
-                        </Route>
-                        <Route exact path="/loggedin">
-                            <Loggedin />
-                        </Route>
-                        <Route exact path="/results">
-                            <Results />
-                        </Route>
-                        <Route exact path="/survey">
-                            <Survey />
-                        </Route>
-                        <Route exact path="/update">
-                            <Update />
-                        </Route>
-                        <Footer />
-                    </UserContext.Provider>
-                </Section>
-            </Router>
-        )
-    };
-
-
-
-    export default App;
+export default App;

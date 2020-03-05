@@ -15,6 +15,8 @@ passport.use(new LocalStrategy(
                 return done(null, false, {message: "User not found."})
             }
             if (!user.validPassword(password, user.password)) {
+                console.log(password)
+                console.log(user.password)
                 return done(null, false, {message: "Invalid password"})
             } else {
                 return done(null, user)

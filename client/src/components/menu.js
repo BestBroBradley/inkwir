@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import '../styles/index.css';
 import {
   Container,
   Dropdown,
@@ -14,10 +15,10 @@ const Header = () => {
 
   return (
   <div>
-    <Menu fixed='top' inverted>
+    <Menu fixed='top' inverted  id="menuBar">
       <Container>
         <Menu.Item as='a' header>
-          <Image size='logo' src='logo-inkwir.png' style={{ marginRight: '1.5em' }} />
+          <Image size='logo' src='logo-inkwir.png' href= "/" style={{ marginRight: '1.5em' }} />
         </Menu.Item>
         <Dropdown item simple text='. . .'>
           <Dropdown.Menu>

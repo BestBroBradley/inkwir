@@ -115,7 +115,8 @@ function App() {
             failureMessage: user.data
           })
         }
-      });
+      }
+      )
     }
   }
 
@@ -147,39 +148,39 @@ function App() {
       })
     }
   }
-
+  
   return (
     <Router>
-        <Section>
-          <UserContext.Provider value={{userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange}}>
+      <Section>
+        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
           <NavTabs />
           <Route exact path="/">
-            <Homepage/> 
+            <Homepage />
           </Route>
           <Route exact path="/account">
-            <Account/> 
+            <Account />
           </Route>
           <Route exact path="/create">
-            <Create/>
-          </Route> 
+            <Create />
+          </Route>
           <Route exact path="/loggedin">
-            <Loggedin/>
-          </Route> 
+            <Loggedin />
+          </Route>
           <Route exact path="/results">
-            <Results/>
+            <Results />
           </Route>
           <Route exact path="/survey">
             <Survey />
           </Route>
           <Route exact path="/update">
-            <Update/> 
+            <Update />
           </Route>
           <Footer />
-          </UserContext.Provider>
-        </Section>
-      </Router>
-  );
+        </UserContext.Provider>
+      </Section>
+    </Router>
+  )
 };
 
 export default App;

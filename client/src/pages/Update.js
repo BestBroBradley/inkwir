@@ -5,7 +5,7 @@ import UpdateAcct  from "../components/UpdateAcct";
 
 function Update() {
   return (
-    <div style={{ marginLeft: 400}}>
+    <div style={{ marginLeft: 200}}>
       <Card>
         <Form>
           <UpdateAcct />

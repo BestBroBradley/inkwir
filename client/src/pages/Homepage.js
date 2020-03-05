@@ -25,7 +25,7 @@ function HomepageAuth(props) {
                         <h4 id="describe">The best place on the web for taking and making surveys!</h4>
                     </Grid.Column>
             </Grid.Row>   
-                <Grid.Row columns={2} id="homeButton">
+                <Grid.Row columns={2} >
                     <Grid.Column >
                         <LoginButton />
                     </Grid.Column>

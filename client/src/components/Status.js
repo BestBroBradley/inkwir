@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Progress } from 'semantic-ui-react'
-// import SurveyStatus from './SurveyStatus';
+
 
 const buttonStyle = {
     background: "rgb(5, 15, 30)",

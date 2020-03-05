@@ -44,8 +44,8 @@ function App() {
     age: 0,
     nationality: "",
     gender: "",
-    results: {},
-    loggedIn: false,
+    results: [],
+    loggedIn: true,
     user: null,
     failureMessage: null
   })
@@ -53,6 +53,7 @@ function App() {
   const { email, username, password, age, nationality, gender, loggedIn } = userState
 
   useEffect(() => {
+    console.log(loggedIn);
     isLoggedIn();
   }, [])
 
@@ -152,7 +153,7 @@ function App() {
   return (
     <Router>
       <Section>
-        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
+        <UserContext.Provider value={{ userState, logout, loggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
           <NavTabs />
           <Route exact path="/">

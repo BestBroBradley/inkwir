@@ -1,13 +1,15 @@
 import React from "react";
+import  { Chart } from "react-google-charts";
+import BarChart from "../components/BarChart";
+import { Container } from "semantic-ui-react";
 
 function Results() {
   return (
-    <div>
-      <h1>Results</h1>
-      <p>
-     This is the Results
-      </p>
-    </div>
+    
+      <Container>
+      <BarChart />
+      </Container>
+     
   );
 }
 

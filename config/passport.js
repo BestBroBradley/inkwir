@@ -1,6 +1,7 @@
 const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
 const db = require("../models")
+const bcrypt = require ("bcryptjs")
 
 passport.use(new LocalStrategy(
     function(username, password, done) {
@@ -14,7 +15,7 @@ passport.use(new LocalStrategy(
             if (!user) {
                 return done(null, false, {message: "User not found."})
             }
-            if (!user.validPassword(password, user.password)) {
+            if (bcrypt.compareSync(password, user.password)) {                    
                 console.log(password)
                 console.log(user.password)
                 return done(null, false, {message: "Invalid password"})

@@ -35,11 +35,6 @@ class Section extends Component {
 
 function App() {
 
-
-
-      
-
-
   const [userState, setUserState] = useState({
     email: "",
     username: "",
@@ -55,7 +50,7 @@ function App() {
     failureMessage: null
   })
 
-  const { email, username, password, loggedIn } = userState
+  const { email, username, password, age, nationality, gender, loggedIn } = userState
 
   useEffect(() => {
     isLoggedIn();
@@ -70,12 +65,11 @@ function App() {
     });
   };
 
-  const handleLogin = event => {
-    event.preventDefault();
-    if (username && password) {
+  const handleLogin = ((un, pw) => {
+    if (un && pw) {
       API.login({
-        username: username,
-        password: password
+        username: un,
+        password: pw
       }).then(user => {
         if (user.data.loggedIn) {
           setUserState({
@@ -91,15 +85,19 @@ function App() {
         }
       });
     }
-  }
+  })
 
   const handleSignup = event => {
     event.preventDefault();
+    console.log(`Received ${userState}`)
     if (username && password) {
       API.signup({
         email: email,
         username: username,
-        password: password
+        password: password,
+        age: age,
+        nationality: nationality,
+        gender: gender
       }).then(user => {
         if (user.data.loggedIn) {
           setUserState({
@@ -117,7 +115,8 @@ function App() {
             failureMessage: user.data
           })
         }
-      });
+      }
+      )
     }
   }
 
@@ -149,41 +148,39 @@ function App() {
       })
     }
   }
-
+  
   return (
     <Router>
-        <Section>
-          <UserContext.Provider value={{userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange}}>
+      <Section>
+        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
           <NavTabs />
           <Route exact path="/">
-            <Homepage/> 
+            <Homepage />
           </Route>
           <Route exact path="/account">
-            <Account/> 
+            <Account />
           </Route>
           <Route exact path="/create">
-            <Create/>
-          </Route> 
+            <Create />
+          </Route>
           <Route exact path="/loggedin">
-            <Loggedin/>
-          </Route> 
+            <Loggedin />
+          </Route>
           <Route exact path="/results">
-            <Results/>
+            <Results />
           </Route>
           <Route exact path="/survey">
             <Survey />
           </Route>
           <Route exact path="/update">
-            <Loggedin/> 
+            <Update />
           </Route>
           <Footer />
-          </UserContext.Provider>
-        </Section>
-      </Router>
-  );
-  };
-
-
+        </UserContext.Provider>
+      </Section>
+    </Router>
+  )
+};
 
 export default App;

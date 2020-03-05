@@ -20,9 +20,6 @@ const progress1 = {
 
 }
 
-
-
-
 const Status = () => {
    
     return (

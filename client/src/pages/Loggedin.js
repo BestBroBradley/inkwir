@@ -10,18 +10,18 @@ function Loggedin() {
         <Container>
             <Grid>
             <Grid.Row columns={2}>
-                    <Grid.Column>
+                    <Grid.Column href="/Survey">
                         <TakeSurvey />
                     </Grid.Column>
-                    <Grid.Column>
+                    <Grid.Column href="/LoggedIn">
                         <Taken />
                     </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={2}>
-                    <Grid.Column>
+                    <Grid.Column href="/LoggedIn">
                         <Status />
                     </Grid.Column>
-                    <Grid.Column>
+                    <Grid.Column href="/LoggedIn">
                         <Created />
                     </Grid.Column>
                 </Grid.Row>

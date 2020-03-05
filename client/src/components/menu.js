@@ -22,7 +22,7 @@ const Header = () => {
         </Menu.Item>
         <Dropdown item simple text='. . .'>
           <Dropdown.Menu>
-            <Dropdown.Item>Update Account</Dropdown.Item>
+            <Dropdown.Item href="/Update">Update Account</Dropdown.Item>
             <Dropdown.Item onClick={logout}>Sign Out</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

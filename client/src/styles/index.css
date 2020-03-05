@@ -53,7 +53,7 @@ code {
   background-color: rgb(5, 15, 30);
   height: 53rem;
   width: 500px;
-  margin-left: -10rem;
+  margin-left: 40rem;
   padding: 30px;
   border: rgb(5, 15, 30) 5px;
   color: black;
@@ -61,13 +61,14 @@ code {
 
 .ui.card {
   background: transparent;
-  border-width: 0;
+  border-color: rgb(5, 15, 30);
 }
 
 #updateAccount {
   background-color: rgb(5, 15, 30);
+  border-color: rgb(5, 15, 30);
   height: 100%;
-  width: 500px;
+  width: 500rem;
   padding: 20px;
   opacity: 90%;
 }
@@ -96,6 +97,7 @@ code {
 
 #surveyLists {
   font-size: 20;
+  padding-left: -14px;
 }
 
 #mainButton {
@@ -112,4 +114,16 @@ h1 {
 
 #homeButton {
   margin-left: 100px;
+}
+
+.ui.grid {
+  width: 76.5% !important;
+}
+
+.bigBox {
+  margin-top: 1rem;
+}
+
+.ui.segment {
+  opacity: 0%;
 }

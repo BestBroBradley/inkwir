@@ -11,7 +11,9 @@ import UserContext from "../utils/UserContext"
 
 const Header = () => {
 
-  const { logout } = useContext(UserContext)
+  const { userState, logout } = useContext(UserContext)
+
+  console.log(userState.loggedIn)
 
   return (
   <div>
@@ -22,8 +24,11 @@ const Header = () => {
         </Menu.Item>
         <Dropdown item simple text='. . .'>
           <Dropdown.Menu>
-            <Dropdown.Item href="/Update">Update Account</Dropdown.Item>
-            <Dropdown.Item onClick={logout}>Sign Out</Dropdown.Item>
+            { userState.loggedIn ? 
+            (<><Dropdown.Item href="/update">Update Account</Dropdown.Item>
+            <Dropdown.Item onClick={logout}>Sign Out</Dropdown.Item></>) :
+            (<><Dropdown.Item href="/account">Create an Account</Dropdown.Item>
+            <Dropdown.Item href="/signup">Sign In</Dropdown.Item></>) }
           </Dropdown.Menu>
         </Dropdown>
       </Container>

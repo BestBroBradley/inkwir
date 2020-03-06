@@ -1,6 +1,6 @@
-import React from "react";
-import { Button, Progress } from 'semantic-ui-react'
-
+import React, { useContext, useEffect } from "react";
+import { Button, Card, Progress } from 'semantic-ui-react'
+import UserContext from "../utils/UserContext"
 
 const buttonStyle = {
     background: "rgb(5, 15, 30)",
@@ -22,20 +22,22 @@ const progress1 = {
 
 const Status = () => {
    
+    const { userState } = useContext(UserContext)
+
+    console.log(userState.surveysTaken.length)
+
     return (
-       
         <Button style={buttonStyle} >
             <div> 
                     <h3>Survey Status</h3>
                     <h5>Complete 10 surveys to unlock the
                     ability to create your own surveys!</h5>
       
-                    <Progress class='progress1' color='#ef291f'  value='3' total='10' progress='ratio' />
-                    <h4 color= 'grey'>Create your own surveys!</h4> 
+                    { userState.surveysTaken.length ? (<Progress className='progress1' color='#ef291f'  value={userState.surveysTaken.length} total='10' progress='ratio' />) : null}
+                    { userState.surveysTaken.length >= 10 ? (<h4 color= 'grey'>Create your own surveys!</h4>) : null } 
                
             </div>
         </Button>
-        
     )
 }
 

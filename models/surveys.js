@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const surveySchema = new Schema({
     title: { type: String, required: true, unique: true },
-    author: { type: String, required: true },
     category: { type: String, required: true },
     questions: [
         {
@@ -53,7 +52,8 @@ const surveySchema = new Schema({
     results: {
         type: Schema.Types.ObjectId,
         ref: "Result"
-    }
+    },
+    createdBy: { type: String, required: false }
 });
 
 const Survey = mongoose.model("Survey", surveySchema);

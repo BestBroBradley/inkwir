@@ -29,16 +29,6 @@ const UserSchema = new Schema ({
         type: Date,
         default: Date.now()
     },
-    surveysMade: {
-        type: Array,
-        default:[],
-        required: true
-    },
-    surveysTaken: {
-        type: Array,
-        default:[],
-        required: true
-    },
     age: {
         type: Number,
         required: false
@@ -51,7 +41,12 @@ const UserSchema = new Schema ({
         type: String,
         required: false
     },
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: "Creator"
+    }
 })
+
 
 UserSchema.methods.generateHash = (function(password) {
     return bcrypt.hashSync = (password, bcrypt.genSaltSync(10))

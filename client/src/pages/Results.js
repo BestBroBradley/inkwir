@@ -2,7 +2,7 @@ import React from "react";
 // import  { Chart } from "react-google-charts";
 import BarChart from "../components/BarChart";
 import { Grid, Segment } from "semantic-ui-react";
-import TakeSurvey from "../components/TakeSurvey";
+import SingleSurvey from "../components/SingleSurvey";
 
 function Results() {
   return (
@@ -10,23 +10,26 @@ function Results() {
      <Grid.Row stretched>
         <Grid.Column>
           <Segment>
-          <TakeSurvey />
+          <SingleSurvey />
           </Segment>
           <Segment>
-          <TakeSurvey />
+          <SingleSurvey />
           </Segment>
         </Grid.Column>
         <Grid.Column>
           <Segment>
-          <TakeSurvey />
+          <SingleSurvey />
           </Segment>
           <Segment>
-          <TakeSurvey />
+          <SingleSurvey />
           </Segment>
         </Grid.Column>
         <Grid.Column>
           <Segment>
           <BarChart />
+          </Segment>
+          <Segment>
+          <SingleSurvey />
           </Segment>
         </Grid.Column>
       </Grid.Row>

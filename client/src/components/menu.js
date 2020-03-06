@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, userState } from 'react'
 import '../styles/index.css';
 import {
   Container,
@@ -10,6 +10,7 @@ import UserContext from "../utils/UserContext"
 
 
 const Header = () => {
+
 
   const { userState, logout } = useContext(UserContext)
 

@@ -44,8 +44,8 @@ function App() {
     age: 0,
     nationality: "",
     gender: "",
-    results: {},
-    loggedIn: false,
+    results: [],
+    loggedIn: true,
     user: null,
     failureMessage: null
   })
@@ -53,6 +53,7 @@ function App() {
   const { email, username, password, age, nationality, gender, loggedIn } = userState
 
   useEffect(() => {
+    // console.log(userState);
     isLoggedIn();
   }, [])
 
@@ -65,7 +66,7 @@ function App() {
     });
   };
 
-  const handleLogin = ((un, pw) => {
+  const handleLogin = (un, pw) => {
     if (un && pw) {
       API.login({
         username: un,
@@ -85,7 +86,7 @@ function App() {
         }
       });
     }
-  })
+  }
 
   const handleSignup = event => {
     event.preventDefault();

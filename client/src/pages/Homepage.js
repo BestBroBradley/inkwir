@@ -1,14 +1,12 @@
-import React, {useState} from "react";
+import React, { userState } from "react";
 import LoginButton from "../components/LoginButton";
 import TakeSurvey from "../components/TakeSurveybtn";
-import Status from "../components/Status";
 import {Grid, Container} from "semantic-ui-react";
 
 
 
 function Homepage(props) {
-    console.log(this);
-    const loggedIn = useState(0);
+    const loggedIn = props.isLoggedIn;
     if (loggedIn) {
         return <HomepageAuth />;
     }
@@ -16,7 +14,7 @@ function Homepage(props) {
 }
 
 
-function HomepageAuth(props) {
+function HomepageAuth() {
     return (
         <Container>
             <Grid>
@@ -40,7 +38,7 @@ function HomepageAuth(props) {
     );
 }
 
-function HomepageNoAuth(props) {
+function HomepageNoAuth() {
     return <h1>Please sign in.</h1> ;
 }
 

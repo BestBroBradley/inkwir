@@ -53,8 +53,8 @@ function App() {
   const { email, username, password, age, nationality, gender, loggedIn } = userState
 
   useEffect(() => {
-    console.log(loggedIn);
-    isLoggedIn();
+    console.log(userState);
+    // isLoggedIn();
   }, [])
 
   const handleInputChange = event => {
@@ -66,7 +66,7 @@ function App() {
     });
   };
 
-  const handleLogin = ((un, pw) => {
+  const handleLogin = (un, pw) => {
     if (un && pw) {
       API.login({
         username: un,
@@ -86,7 +86,7 @@ function App() {
         }
       });
     }
-  })
+  }
 
   const handleSignup = event => {
     event.preventDefault();
@@ -153,7 +153,7 @@ function App() {
   return (
     <Router>
       <Section>
-        <UserContext.Provider value={{ userState, logout, loggedIn, handleSignup, handleLogin, handleInputChange }}>
+        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
           <NavTabs />
           <Route exact path="/">

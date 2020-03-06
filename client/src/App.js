@@ -53,8 +53,8 @@ function App() {
   const { email, username, password, age, nationality, gender, loggedIn } = userState
 
   useEffect(() => {
-    console.log(userState);
-    // isLoggedIn();
+    // console.log(userState);
+    isLoggedIn();
   }, [])
 
   const handleInputChange = event => {

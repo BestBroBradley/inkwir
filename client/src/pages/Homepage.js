@@ -1,13 +1,15 @@
-import React, { userState } from "react";
+import React, { useState, useContext } from "react";
 import LoginButton from "../components/LoginButton";
 import TakeSurvey from "../components/TakeSurveybtn";
 import {Grid, Container} from "semantic-ui-react";
+import UserContext from "../utils/UserContext";
 
 
 
-function Homepage(props) {
-    const loggedIn = props.isLoggedIn;
-    if (loggedIn) {
+
+function Homepage() {
+    const { userState } = useContext(UserContext);
+    if (userState.loggedIn) {
         return <HomepageAuth />;
     }
     return <HomepageNoAuth />

@@ -9,7 +9,7 @@ import UserContext from "../utils/UserContext";
 
 function Homepage() {
     const { userState } = useContext(UserContext);
-    if (userState.loggedIn) {
+    if (!userState.loggedIn) {
         return <HomepageAuth />;
     }
     return <HomepageNoAuth />

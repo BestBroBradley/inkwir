@@ -6,7 +6,7 @@ const UserContext = React.createContext({
         email: "",
         username: "",
         password: "",
-        loggedIn: true,
+        loggedIn: false,
         user: null,
         failureMessage: null
 });

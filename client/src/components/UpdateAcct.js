@@ -8,6 +8,10 @@ const UpdateAcct = () => (
     <h3>Update Account:</h3>
 
     <Form.Field>
+      <label>Email</label>
+      <input placeholder='Email'/>
+    </Form.Field>
+    <Form.Field>
       <label>Old Password</label>
       <input placeholder='Old Password' />
     </Form.Field>

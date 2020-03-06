@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const passport = require("../../config/passport")
 const db = require ("../../models")
+const UsersController = require("../../controllers/usersController");
 const authMiddleware = require("../../config/middleware/isAuthenticated");
 
 router.post("/login", passport.authenticate("local", {
@@ -71,5 +72,15 @@ router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
   });
 });
 
+router
+  .route("/")
+  .get(UsersController.findAll)
+  .post(UsersController.create)
+
+router
+  .route("/:id")
+  .get(UsersController.getCreator)
+  .put(UsersController.update)
+  .delete(UsersController.remove)
 
 module.exports = router;

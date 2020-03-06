@@ -46,7 +46,7 @@ function App() {
     nationality: "",
     gender: "",
     results: [],
-    loggedIn: true,
+    loggedIn: false,
     user: null,
     failureMessage: null
   })

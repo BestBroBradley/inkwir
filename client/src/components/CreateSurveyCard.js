@@ -10,8 +10,6 @@ const CreateSurvey= () => (
       <br/>
       <Input fluid placeholder='Category:' />
       <br/>
-      <Input fluid placeholder='Author:' />
-      <br/>
     <Input fluid placeholder='Enter a QUESTION here ...' />
       <br/>
       <br/>
@@ -30,3 +28,5 @@ const CreateSurvey= () => (
 )
 
 export default CreateSurvey;
+      
+      

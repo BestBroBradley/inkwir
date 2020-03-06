@@ -1,5 +1,6 @@
 module.exports = {
     Results: require ("./results"),
     Surveys: require ("./surveys"),
-    Users: require ("./users")
+    Users: require ("./users"),
+    Creator: require ("./creator")
 }

@@ -45,9 +45,13 @@ function App() {
     nationality: "",
     gender: "",
     results: [],
-    loggedIn: true,
+    loggedIn: false,
     user: null,
     failureMessage: null
+  })
+
+  const [currentUser, updateCurrentUser] = useState({
+    currentuser: "",
   })
 
   const { email, username, password, age, nationality, gender, loggedIn } = userState
@@ -129,6 +133,10 @@ function App() {
             ...userState,
             loggedIn: true,
             user: user.data.user
+          })
+          console.log(user)
+          updateCurrentUser({
+            currentuser: user.data.user
           });
         } else {
           console.log(user.data.message);
@@ -153,7 +161,7 @@ function App() {
   return (
     <Router>
       <Section>
-        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
+        <UserContext.Provider value={{ currentUser, userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
           <NavTabs />
           <Route exact path="/">

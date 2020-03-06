@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import LoginButton from "../components/LoginButton";
 import TakeSurvey from "../components/TakeSurveybtn";
+import Status from "../components/Status";
 import {Grid, Container} from "semantic-ui-react";
 
 

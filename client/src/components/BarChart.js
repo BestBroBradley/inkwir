@@ -7,8 +7,8 @@ import { Chart } from "react-google-charts";
 const BarChart = () => (
 
 <Chart
-    width={'500px'}
-    height={'300px'}
+    width={'80rem'}
+    height={'30rem'}
     chartType="BarChart"
     loader={<div>Loading Chart</div>}
     data={[

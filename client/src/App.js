@@ -3,6 +3,7 @@ import './styles/App.css';
 import './styles/footer.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Account from "./pages/Account";
+import NewAccount from "./pages/NewAccount";
 import Create from "./pages/Create";
 import Homepage from "./pages/Homepage";
 import Loggedin from "./pages/Loggedin";
@@ -103,7 +104,7 @@ function App() {
         if (user.data.loggedIn) {
           setUserState({
             ...userState,
-            loggedIn: true,
+            loggedIn: false,
             user: user.data.user
           });
           console.log("log in successful");
@@ -164,6 +165,9 @@ function App() {
           </Route>
           <Route exact path="/create">
             <Create />
+          </Route>
+          <Route exact path="/NewAccount">
+            <NewAccount />
           </Route>
           <Route exact path="/loggedin">
             <Loggedin />

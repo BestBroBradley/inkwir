@@ -9,6 +9,8 @@ const buttonStyle = {
     opacity: "90%",
     color: "#ef291f"
 
+
+
 } 
 
 const statusBarStyle = {

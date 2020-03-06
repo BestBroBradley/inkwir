@@ -6,27 +6,27 @@ import TakeSurvey from "../components/TakeSurvey";
 
 function Results() {
   return (
-    <Grid columns={3} divided>
+    <Grid columns={2} divided>
      <Grid.Row stretched>
         <Grid.Column>
           <Segment>
-          <TakeSurvey />
-          </Segment>
-          <Segment>
-          <TakeSurvey />
-          </Segment>
-        </Grid.Column>
-        <Grid.Column>
-          <Segment>
-          <TakeSurvey />
-          </Segment>
-          <Segment>
-          <TakeSurvey />
-          </Segment>
-        </Grid.Column>
-        <Grid.Column>
-          <Segment>
           <BarChart />
+          </Segment>
+        </Grid.Column>
+        <Grid.Column>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+        </Grid.Column>
+        <Grid.Column>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+          <Segment>
+          <TakeSurvey />
           </Segment>
         </Grid.Column>
       </Grid.Row>

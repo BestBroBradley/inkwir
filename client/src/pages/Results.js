@@ -1,15 +1,38 @@
 import React from "react";
-import  { Chart } from "react-google-charts";
+// import  { Chart } from "react-google-charts";
 import BarChart from "../components/BarChart";
-import { Container } from "semantic-ui-react";
+import { Grid, Segment } from "semantic-ui-react";
+import TakeSurvey from "../components/TakeSurvey";
 
 function Results() {
   return (
-    
-      <Container>
-      <BarChart />
-      </Container>
-     
+    <Grid columns={3} divided>
+     <Grid.Row stretched>
+        <Grid.Column>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+        </Grid.Column>
+        <Grid.Column>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+          <Segment>
+          <TakeSurvey />
+          </Segment>
+        </Grid.Column>
+        <Grid.Column>
+          <Segment>
+          <BarChart />
+          </Segment>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+          
+          
   );
 }
 

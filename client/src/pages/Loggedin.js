@@ -1,17 +1,17 @@
 import React from "react";
 import {Grid, Container} from "semantic-ui-react";
-import TakeSurvey from "../components/TakeSurveybtn";
+import TakeSurvey2 from "../components/2TakeSurveyBtn";
 import Taken from "../components/Taken";
 import Status from "../components/Status";
 import Created from "../components/Created";
 
 function Loggedin() {
     return (
-        <Container>
-            <Grid>
+        <Container >
+            <Grid class="bigBox">
             <Grid.Row columns={2}>
                     <Grid.Column>
-                        <TakeSurvey />
+                        <TakeSurvey2 />
                     </Grid.Column>
                     <Grid.Column>
                         <Taken />

@@ -159,7 +159,7 @@ function App() {
             <Homepage />
           </Route>
           <Route exact path="/account">
-            <Account />
+            <Account /> */}
           </Route>
           <Route exact path="/create">
             <Create />
@@ -173,7 +173,7 @@ function App() {
           <Route exact path="/survey">
             <Survey />
           </Route>
-          <Route exact path="/update">
+         <Route exact path="/update">
             <Update />
           </Route>
           <Footer />
@@ -181,6 +181,6 @@ function App() {
       </Section>
     </Router>
   )
-};
+}; 
 
 export default App;

@@ -12,23 +12,22 @@ const BarChart = () => (
     chartType="BarChart"
     loader={<div>Loading Chart</div>}
     data={[
-      ['City', '2010 Population', '2000 Population'],
-      ['New York City, NY', 8175000, 8008000],
-      ['Los Angeles, CA', 3792000, 3694000],
-      ['Chicago, IL', 2695000, 2896000],
-      ['Houston, TX', 2099000, 1953000],
-      ['Philadelphia, PA', 1526000, 1517000],
+      ['Q1', 'A1', 'A2', 'A3', 'A4'],
+      ['How often do you shop for groceries in a week?', 10, 3, 9, 20],
+      ['How often do you get gas in a week?', 2, 3, 50, 10],
+      ['How often do you clean your bathroom?', 16, 89, 34, 4],
+     
     ]}
     options={{
       title: 'Population of Largest U.S. Cities',
       chartArea: { width: '50%' },
-      colors: ['#b0120a', '#ffab91'],
+      colors: ['#fde9e8', '#f8a9a5', '#f36962', '#ef291f' ],
       hAxis: {
-        title: 'Total Population',
+        title: 'Number of Responses for Each Answer',
         minValue: 0,
       },
       vAxis: {
-        title: 'City',
+        title: 'Questions',
       },
     }}
     // For tests

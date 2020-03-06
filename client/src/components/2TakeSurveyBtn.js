@@ -8,6 +8,8 @@ const buttonStyle = {
     opacity: "90%",
     color: "#ef291f",
     paddingTop: "170px",
+ 
+    
     
 
 } 
@@ -15,16 +17,16 @@ const buttonStyle = {
 
 
 
-const LoginButton = () => {
+const TakeSurveyBtn2 = () => {
    
     return (
        
-        <Button style={buttonStyle} href="/Account">
-        <h2>Login/Create Account</h2>
+        <Button style={buttonStyle} href="/Survey">
+        <h2>Start Survey Now!</h2>
         </Button>
         
     )
 }
 
 
-export default LoginButton;
+export default TakeSurveyBtn2;

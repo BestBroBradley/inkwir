@@ -3,13 +3,10 @@ import { Button,  Form, Card } from 'semantic-ui-react'
 import "../styles/index.css"
 
 const UpdateAcct = () => (
-<Card id="updateAccount">
-  <Form  >
+
+ <div id="updateAccount" >  
     <h3>Update Account:</h3>
-    <Form.Field>
-      <label>Username</label>
-      <input placeholder='Username' />
-    </Form.Field>
+
     <Form.Field>
       <label>Email</label>
       <input placeholder='Email'/>
@@ -26,6 +23,12 @@ const UpdateAcct = () => (
       <label>Confirm Password</label>
       <input placeholder='Confirm Password' />
     </Form.Field>
+    <br></br>
+    <br></br>
+    <Form.Field>
+      <label>Email</label>
+      <input placeholder='Email'/>
+    </Form.Field>
     
     <Form.Field>
       <label>Age</label>
@@ -39,10 +42,12 @@ const UpdateAcct = () => (
       <label>Location</label>
       <input placeholder='Location' />
     </Form.Field>
+    <br></br>
     <Button id="buttonClr" type='submit'>Update</Button>
+    <br></br>
     
-  </Form>
-</Card>
+ </div>
+
 )
 
 

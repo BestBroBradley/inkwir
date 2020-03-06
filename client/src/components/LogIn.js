@@ -25,9 +25,9 @@ const LogIn = () => {
   }
 
   return (
-  <Card>
-
-  <Form>
+ 
+<div>
+  <Form id="updateAccount">
     <h3>Log In :</h3>
     <Form.Field>
       <label>Username</label>
@@ -38,9 +38,9 @@ const LogIn = () => {
       <input value={login.password} placeholder='Password' name="password" onChange={handleInput}/>
     </Form.Field>
     
-    <Button color= 'pink' type='submit' onClick={handleSubmit}>Log In</Button>
+    <Button id="buttonClr" type='submit' onClick={handleSubmit}>Log In</Button>
   </Form>
-  </Card>
+  </div>
 )}
 
 export default LogIn;

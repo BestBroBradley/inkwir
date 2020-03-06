@@ -1,17 +1,20 @@
 import React from "react";
-import { Form, Card } from 'semantic-ui-react';
+import { Form, Card, Grid, Container } from 'semantic-ui-react';
 import UpdateAcct  from "../components/UpdateAcct";
 
 
 function Update() {
   return (
-    <div style={{ marginLeft: 200}}>
-      <Card>
-        <Form>
-          <UpdateAcct />
+    <Container>
+        
+    <Grid>
+      <Grid.Row>
+          <Form>
+        <UpdateAcct />
         </Form>
-      </Card>
-    </div>
+      </Grid.Row>
+    </Grid>
+  </Container>    
   );
 }
 

@@ -21,5 +21,9 @@ export default {
 
   logout: function() {
     return axios.get("/api/users/logout")
+  },
+
+  submitsurvey: function () {
+    return axios.post("/api/survey")
   }
 };

@@ -1,8 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { Input, Card, Button } from 'semantic-ui-react'
 import '../styles/index.css'
+import API from '../utils/API'
+import UserContext from '../utils/UserContext'
 
 const CreateSurvey = () => {
+
+  // useEffect(() => {
+  //   // console.log(userState);
+  //   isLoggedIn();
+  // }, [])
+  
+  const { userState, currentUser } = useContext(UserContext)
+  const { loggedIn } = userState
+  const { _id } = currentUser.currentuser
+
+  console.log(_id)
+  console.log(loggedIn)
 
   const [currentQuestion, setCurrentQuestion] = useState({
     title: "",
@@ -18,10 +32,10 @@ const CreateSurvey = () => {
   const { questionNumber, title, category, question, answer1, answer2, answer3, answer4 } = currentQuestion
 
   const [newSurvey, updateSurvey] = useState({
+    createdBy: _id,
     q1: "",
     a1: {}
   })
-
 
   const handleAdd = () => {
     console.log(`add`)
@@ -144,8 +158,9 @@ const CreateSurvey = () => {
     }
   }
 
-  const handleSubmit = () => {
-    console.log(`submit`)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    API.submitsurvey(newSurvey)
   }
 
   const handleInputChange = (event) => {
@@ -158,26 +173,32 @@ const CreateSurvey = () => {
 
   return (
     <div id="SurveyCard">
-
-      <h3>Create a New Survey!</h3>
-      <Input value={title}name="title" onChange={handleInputChange} fluid placeholder='Survey Title:'/>
-      <br />
-      <Input value={category} name="category" onChange={handleInputChange} fluid placeholder='Category:'/>
-      <br />
-      <Input value={question} name="question" onChange={handleInputChange} fluid placeholder='Enter a QUESTION here ...'/>
-      <br />
-      <br />
-      <Input value={answer1} name="answer1" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
-      <br />
-      <Input value={answer2} name="answer2" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
-      <br />
-      <Input value={answer3} name="answer3" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
-      <br />
-      <Input value={answer4} name="answer4" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
-      <br />
-
-      <Button onClick={handleAdd} id="buttonClr">Add another question!</Button>
-      <Button onClick={handleSubmit} id="buttonClr">Submit your survey!</Button>
+      {loggedIn === true ? (
+        <>
+        <h3>Create a New Survey!</h3>
+        <Input value={title}name="title" onChange={handleInputChange} fluid placeholder='Survey Title:'/>
+        <br />
+        <Input value={category} name="category" onChange={handleInputChange} fluid placeholder='Category:'/>
+        <br />
+        <Input value={question} name="question" onChange={handleInputChange} fluid placeholder='Enter a QUESTION here ...'/>
+        <br />
+        <br />
+        <Input value={answer1} name="answer1" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
+        <br />
+        <Input value={answer2} name="answer2" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
+        <br />
+        <Input value={answer3} name="answer3" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
+        <br />
+        <Input value={answer4} name="answer4" onChange={handleInputChange} fluid placeholder='Enter an ANSWER here ...'/>
+        <br />
+  
+        <Button onClick={handleAdd} id="buttonClr">Add another question!</Button>
+        <Button onClick={handleSubmit} id="buttonClr">Submit your survey!</Button>
+        </>
+      ) : (
+        <h1>Please sign in to submit a survey</h1>
+      )}
+      
     </div>
   )
 }

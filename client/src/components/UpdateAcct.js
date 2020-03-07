@@ -49,7 +49,7 @@ useEffect(() => {
           {(text.length) > 8 && strongPassword.test(text) ? setUpdates({ ...updates, oldpw: text, validOldPW: true}) : setUpdates({ ...updates, oldpw: text, validOldPW: false})}
           return;
         case "newpw":
-          {(text.length) > 8 && strongPassword.test(text) ? setUpdates({ ...updates, newpw: text, validNewPW: true}) : setUpdates({ ...updates, newpw: text, validNewPW: false})}
+          {(text.length) > 8 && strongPassword.test(text) || text.length === 0 ? setUpdates({ ...updates, newpw: text, validNewPW: true}) : setUpdates({ ...updates, newpw: text, validNewPW: false})}
           return;
         case "confirm":
           {(text !== updates.newpw) ? setUpdates({ ...updates, confirm: text, validMatch: false}) : setUpdates({ ...updates, confirm: text, validMatch: true})}
@@ -98,18 +98,13 @@ const handleUpdateSubmit = (event => {
   event.preventDefault()
 
   if (updates.validEmail === true && updates.validOldPW === true  && updates.validNewPW === true && updates.validMatch === true) {
-    console.log(currentUser.currentuser._id)
     const updatedUser = {
       id: currentUser.currentuser._id,
       email: updates.email,
       age: updates.age,
       nationality: updates.nationality,
       gender: updates.gender,
-      oldpassword: "",
-      newpassword: ""
-    }
-    if (updates.oldpw !== "") {
-      updatedUser.oldpassword = updates.oldpw
+      oldpassword: updates.oldpw
     }
     if (updates.newpw !== "") {
       updatedUser.newpassword = updates.confirm
@@ -124,16 +119,18 @@ return (
   <Form onSubmit={handleUpdateSubmit} >
     <h3>Update Account:</h3>
     <Form.Field>
-      <label>Username</label>
+      {/* <label>Username</label> */}
       <input value="username" value={username} placeholder='Username' />
     </Form.Field>
     <Form.Field>
+      {/* <label>Current Password</label> */}
+      <h4 style={{color: "#ef291f"}}>Please confirm your current password to update account.</h4>
+      <input value={updates.oldpw} name="oldpw" onChange={handleUpdate} placeholder='Current Password' />
+    </Form.Field>
+    <br/>
+    <Form.Field>
       <label>Email</label>
       <input value={updates.email} name="email" onChange={handleUpdate} placeholder={email} />
-    </Form.Field>
-    <Form.Field>
-      <label>Old Password</label>
-      <input value={updates.oldpw} name="oldpw" onChange={handleUpdate} placeholder='Current Password' />
     </Form.Field>
     <Form.Field>
       <label>New Password</label>

@@ -2,6 +2,10 @@ const router = require("express").Router();
 const passport = require("../../config/passport")
 const db = require ("../../models")
 const authMiddleware = require("../../config/middleware/isAuthenticated");
+const bcrypt = require ("bcryptjs")
+
+const generateHash = ((password) => bcrypt.hashSync = (password, bcrypt.genSaltSync(10)))
+const validPassword = ((password, encrypted) => bcrypt.compareSync(password, encrypted))
 
 router.post("/login", passport.authenticate("local", {
   failureRedirect: "/api/users/unauthorized",
@@ -63,13 +67,40 @@ router.get("/logout", authMiddleware.logoutUser, function(req, res, next) {
   res.json("User logged out successfully");
 });
 
-router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
-  db.Users.findByIdAndUpdate(req.user._id).populate('todos').then((user) => {
-    res.json(user);
-  }).catch((err) => {
-    res.json(err);
-  });
-});
+router.put("/user/:id", authMiddleware.isLoggedIn, function(req, res, next) {
+  db.Users.findOne({_id: req.params.id}, function(err, user) {
+    if (err) throw err;
+    if (!user) {
+      console.log("User doesn't exist.")
+      return res.json("User doesn't exist.");
+    }
+    if (user && !bcrypt.compareSync(req.body.oldpassword, user.password)) {
+      console.log(`Current PW: ${user.password}`)
+      console.log(`User input PW: ${generateHash(req.body.oldpassword)}`)
+      console.log(bcrypt.compareSync(req.body.oldpassword, user.password))
+      console.log("Passwords don't match.")
+      return res.json("Passwords don't match.")
+    }
+    if (user && bcrypt.compareSync(req.body.oldpassword, user.password)) {
+      console.log("Passwords match")
+      console.log(bcrypt.compareSync(req.body.oldpassword, user.password))
+      console.log(req.body.oldpassword, user.password)      
+      db.Users.findByIdAndUpdate(req.body._id), {}.populate('todos').then((user) => {
+        res.json(user);
+      }).catch((err) => {
+        res.json(err);
+      });
 
+    }
+      })
+      // newUser.password = newUser.generateHash(req.body.password);
+      // newUser.save(function(err) {
+      //   if (err) throw err;
+      //   console.log("user saved!");
+      //   res.redirect(307, "/api/users/login")
+      // });  
+    })
+
+// Model.findByIdAndUpdate(id, { $set: { name: 'jason bourne' }}, options, callback)
 
 module.exports = router;

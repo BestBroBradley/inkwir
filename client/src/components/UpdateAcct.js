@@ -25,11 +25,9 @@ const [updates, setUpdates] = useState({
 
 useEffect(() => {
   API.isLoggedIn().then(user => {
-    console.log(user)
     const { email, password, age, nationality, gender, username } = user.data.user
     setUpdates({
       email: email,
-      validEmail: false,
       oldpw: "",
       newpw: "",
       confirm: "",
@@ -46,7 +44,6 @@ useEffect(() => {
 
   const testPW = (pw, text) => {
       let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
-      console.log(pw, text)
       switch (pw) {
         case "oldpw":
           {(text.length) > 8 && strongPassword.test(text) ? setUpdates({ ...updates, oldpw: text, validOldPW: true}) : setUpdates({ ...updates, oldpw: text, validOldPW: false})}
@@ -62,45 +59,69 @@ useEffect(() => {
       }
   }
 
-  const validateEmail = () => {
-    let validEmail = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    let valid = validEmail.test(updates.email);
-    if (!updates.validEmail && valid) {
+  const validateEmail = (value) => {
+    let emailTest = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    let valid = emailTest.test(updates.email);
+    
+    if (valid) {
         setUpdates({
           ...updates,
+            email: value,
             validEmail: true
         });
     }
-    if (updates.validEmail && !valid) {
-        setUpdates({
-          ...updates,
-            validEmail: false
-        });
+    if (!valid) {
+      setUpdates({
+        ...updates,
+        email: value,
+        validEmail: false
+      });
     }
   }
 
   const handleUpdate = (event) => {
     const value = event.target.value;
     const name = event.target.name;
-  if (name !== "oldpw" && name!=="newpw" && name!== "confirm") {
+  if (name !== "oldpw" && name!=="newpw" && name!=="confirm" && name!=="email") {
     setUpdates({
     ...updates,
     [name]: value
-  })} else if (name === "oldpw" || name === "newpw" || name === "confirm") {
+  })} else if (name === "email") {
+    validateEmail(value)
+  }
+  else if (name === "oldpw" || name === "newpw" || name === "confirm") {
     testPW(name, value)
   }
-  console.log(updates)
 }
 
 const handleUpdateSubmit = (event => {
   event.preventDefault()
-  validateEmail()
 
+  if (updates.validEmail === true && updates.validOldPW === true  && updates.validNewPW === true && updates.validMatch === true) {
+    console.log(currentUser.currentuser._id)
+    const updatedUser = {
+      id: currentUser.currentuser._id,
+      email: updates.email,
+      age: updates.age,
+      nationality: updates.nationality,
+      gender: updates.gender,
+      oldpassword: "",
+      newpassword: ""
+    }
+    if (updates.oldpw !== "") {
+      updatedUser.oldpassword = updates.oldpw
+    }
+    if (updates.newpw !== "") {
+      updatedUser.newpassword = updates.confirm
+    }
+    console.log(updatedUser)
+    API.update(updatedUser)
+  }
 })
 
 return (
 <Card id="updateAccount">
-  <Form  >
+  <Form onSubmit={handleUpdateSubmit} >
     <h3>Update Account:</h3>
     <Form.Field>
       <label>Username</label>
@@ -135,10 +156,8 @@ return (
       <input value={updates.nationality} name="nationality" onChange={handleUpdate} placeholder={nationality} />
     </Form.Field>
     <Button id="buttonClr" type='submit'>Update</Button>
-    
   </Form>
 </Card>
-)
-}
+)}
 
 export default UpdateAcct;

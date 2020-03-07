@@ -3,14 +3,12 @@ import { Input, Card, Button } from 'semantic-ui-react'
 import '../styles/index.css'
 
 const CreateSurvey= () => (
-  <div>
-    <Card  id="SurveyCard"> 
+  <div id="SurveyCard">
+   
       <h3>Create a New Survey!</h3>
       <Input fluid placeholder='Survey Title:' />
       <br/>
       <Input fluid placeholder='Category:' />
-      <br/>
-      <Input fluid placeholder='Author:' />
       <br/>
     <Input fluid placeholder='Enter a QUESTION here ...' />
       <br/>
@@ -23,10 +21,12 @@ const CreateSurvey= () => (
       <br/>
     <Input fluid placeholder='Enter an ANSWER here ...' />
       <br/>
-    </Card> 
+    
     <Button id="buttonClr">Add another question!</Button>
     <Button id="buttonClr">Submit your survey!</Button>
   </div>
 )
 
 export default CreateSurvey;
+      
+      

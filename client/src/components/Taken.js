@@ -20,7 +20,7 @@ const Taken = () => {
        
         <Button style={divStyle} >
         <h2>Last 5 Surveys Taken:</h2>
-        <div className="content" href="/LoggedIn">
+        <div className="content" >
         <ul id='surveyLists'>
           <li>
             <strong href="">{Placeholder}</strong> 

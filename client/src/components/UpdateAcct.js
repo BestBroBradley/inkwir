@@ -117,8 +117,8 @@ const handleUpdateSubmit = (event => {
 })
 
 return (
-<Card id="updateAccount">
-  <Form onSubmit={handleUpdateSubmit} >
+<div id="updateAccount">
+  <Form onSubmit={handleUpdateSubmit}>
     <h3>Update Account:</h3>
     <Form.Field>
       {/* <label>Username</label> */}
@@ -154,9 +154,11 @@ return (
       <label>Location</label>
       <input value={updates.nationality} name="nationality" onChange={handleUpdate} placeholder={nationality} />
     </Form.Field>
+    <br></br>
     <Button id="buttonClr" type='submit'>Update</Button>
   </Form>
-</Card>
+  <br/>
+</div>
 )}
 
 export default UpdateAcct;

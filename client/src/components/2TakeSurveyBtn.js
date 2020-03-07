@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from 'semantic-ui-react'
+import { Link } from "react-router-dom"
 
 const buttonStyle = {
     background: "rgb(5, 15, 30)",
@@ -7,7 +8,8 @@ const buttonStyle = {
     width: 400,
     opacity: "90%",
     color: "#ef291f",
-    paddingTop: "170px",
+    paddingTop: "10px",
+    fontSize: "16pt"
  
     
     
@@ -21,8 +23,8 @@ const TakeSurveyBtn2 = () => {
    
     return (
        
-        <Button style={buttonStyle} href="/Survey">
-        <h2>Start Survey Now!</h2>
+        <Button style={buttonStyle} to="/Survey">
+        <Link>Start Survey Now!</Link>
         </Button>
         
     )

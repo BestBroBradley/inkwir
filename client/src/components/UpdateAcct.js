@@ -107,7 +107,9 @@ const handleUpdateSubmit = (event => {
       oldpassword: updates.oldpw
     }
     if (updates.newpw !== "") {
-      updatedUser.newpassword = updates.confirm
+      updatedUser.password = updates.confirm
+    } else if (updates.newpw === "") {
+      updatedUser.password = updates.oldpw
     }
     console.log(updatedUser)
     API.update(updatedUser)

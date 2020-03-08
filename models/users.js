@@ -41,10 +41,12 @@ const UserSchema = new Schema ({
         type: String,
         required: false
     },
-    createdBy: {
+    createdBy: [
+        {
         type: Schema.Types.ObjectId,
         ref: "Creator"
-    }
+        }
+]
 })
 
 

@@ -177,7 +177,6 @@ const CreateSurvey = () => {
         <br />
         <SearchInput handleSelect={handleSelect}/>
         <br />
-        {/* <Input value={category} name="category" onChange={handleInputChange} fluid placeholder='Category:'/> */}
         <br />
         <Input value={question} name="question" onChange={handleInputChange} fluid placeholder='Enter a QUESTION here ...'/>
         <br />

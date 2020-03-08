@@ -7,37 +7,33 @@ import TakeSurvey from "../components/TakeSurvey";
 import GroupResults from "../components/GroupResults";
 
 function Results() {
-  return (
-    <Container>
-    <Grid>
-      <Grid.Row columns={1}>
-          
-        <Grid.Column >
-        <h5 id="answers">Title:{}</h5>
-         
-         <h5 id="fontPatrol">Category:{}</h5> 
-        
-         <h5 id="fontPatrol"> Your Username:{} </h5>
-     
+    return (
+        <Container>
+            <Grid>
+                <Grid.Row columns={1}>
 
-            <BarChart / >
-                <br></br>
-          <GroupResults  />
-         
-          <GroupResults  />
-          
-          <GroupResults  />
-         
-          <GroupResults  />
-         
-          <GroupResults  />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-    </Container>  
-          
-          
-  );
+                    <Grid.Column >
+                        <h5 id="answers">Title:{}</h5>
+
+                        <h5 id="fontPatrol">Category:{}</h5>
+
+                        <h5 id="fontPatrol"> Your Username:{} </h5>
+
+
+                        <BarChart />
+                        <br></br>
+                        <GroupResults />
+                        <GroupResults />
+                        <GroupResults />
+                        <GroupResults />
+                        <GroupResults />
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+        </Container>
+
+
+    );
 }
 
 export default Results;

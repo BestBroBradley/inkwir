@@ -23,7 +23,8 @@ export default {
     return axios.get("/api/users/logout")
   },
 
-  submitsurvey: function () {
+  submitsurvey: function (survey) {
+    console.log(survey)
     return axios.post("/api/survey")
   }
 };

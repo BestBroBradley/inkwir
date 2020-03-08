@@ -45,22 +45,22 @@ const CreateAcct = () => {
         }
     }
 
-const validateEmail = () => {
-  let validEmail = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
-  let valid = validEmail.test(userState.email);
-  if (!state.validEmail && valid) {
-      updateState({
-        ...state,
-          validEmail: true
-      });
-  }
-  if (state.validEmail && !valid) {
-      updateState({
-        ...state,
-          validEmail: false
-      });
-  }
-}
+    const validateEmail = () => {
+        let validEmail = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+        let valid = validEmail.test(userState.email);
+        if (!state.validEmail && valid) {
+            updateState({
+                ...state,
+                validEmail: true
+            });
+        }
+        if (state.validEmail && !valid) {
+            updateState({
+                ...state,
+                validEmail: false
+            });
+        }
+    }
 
     const validatePassword = () => {
         let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);

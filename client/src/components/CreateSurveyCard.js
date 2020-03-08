@@ -3,20 +3,13 @@ import { Input, Card, Button } from 'semantic-ui-react'
 import '../styles/index.css'
 import API from '../utils/API'
 import UserContext from '../utils/UserContext'
+import { SearchInput } from "../components/SearchCategories"
 
 const CreateSurvey = () => {
-
-  // useEffect(() => {
-  //   // console.log(userState);
-  //   isLoggedIn();
-  // }, [])
   
   const { userState, currentUser } = useContext(UserContext)
   const { loggedIn } = userState
   const { _id } = currentUser.currentuser
-
-  console.log(_id)
-  console.log(loggedIn)
 
   const [currentQuestion, setCurrentQuestion] = useState({
     title: "",
@@ -31,18 +24,20 @@ const CreateSurvey = () => {
 
   const { questionNumber, title, category, question, answer1, answer2, answer3, answer4 } = currentQuestion
 
+  const [submit, sendSubmit] = useState(false)
+
   const [newSurvey, updateSurvey] = useState({
-    createdBy: _id,
     q1: "",
     a1: {}
   })
 
   const handleAdd = () => {
-    console.log(`add`)
-    switch (questionNumber) {
+      switch (questionNumber) {
       case (1):
         updateSurvey({
           ...newSurvey,
+          title: title,
+          createdBy: currentUser.currentuser._id,
           q1: question,
           a1: {
             a: answer1,
@@ -60,7 +55,6 @@ const CreateSurvey = () => {
           answer4: "",
           questionNumber: 2
         })
-        console.log(newSurvey)
         break;
       case (2):
           updateSurvey({
@@ -82,7 +76,6 @@ const CreateSurvey = () => {
             answer4: "",
             questionNumber: 3
           })
-          console.log(newSurvey)
           break;
       case 3:
           updateSurvey({
@@ -104,7 +97,6 @@ const CreateSurvey = () => {
             answer4: "",
             questionNumber: 4
           })
-          console.log(newSurvey)
           break;
       case 4:
           updateSurvey({
@@ -126,7 +118,6 @@ const CreateSurvey = () => {
             answer4: "",
             questionNumber: 5
           })
-          console.log(newSurvey)
           break;
       case 5:
           updateSurvey({
@@ -148,7 +139,6 @@ const CreateSurvey = () => {
             answer4: "",
             questionNumber: 6
           })
-          console.log(newSurvey)
           break;
       case 6:
         alert(`Sorry, no more than 5 questions allowed.`)
@@ -156,6 +146,13 @@ const CreateSurvey = () => {
       default:
         break;
     }
+}
+
+  const handleSelect = (item) => {
+    updateSurvey({
+      ...newSurvey,
+      category: item
+    })
   }
 
   const handleSubmit = (event) => {
@@ -178,7 +175,9 @@ const CreateSurvey = () => {
         <h3>Create a New Survey!</h3>
         <Input value={title}name="title" onChange={handleInputChange} fluid placeholder='Survey Title:'/>
         <br />
-        <Input value={category} name="category" onChange={handleInputChange} fluid placeholder='Category:'/>
+        <SearchInput handleSelect={handleSelect}/>
+        <br />
+        {/* <Input value={category} name="category" onChange={handleInputChange} fluid placeholder='Category:'/> */}
         <br />
         <Input value={question} name="question" onChange={handleInputChange} fluid placeholder='Enter a QUESTION here ...'/>
         <br />

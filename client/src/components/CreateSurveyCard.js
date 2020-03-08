@@ -35,9 +35,6 @@ const CreateSurvey = () => {
       case (1):
         updateSurvey({
           ...newSurvey,
-          title: title,
-          createdBy: currentUser.currentuser._id,
-          questions: {
           q1: question,
           a1: {
             a: answer1,
@@ -45,7 +42,6 @@ const CreateSurvey = () => {
             c: answer3,
             d: answer4
           }
-        }
         })
         setCurrentQuestion({
           ...currentQuestion,
@@ -61,7 +57,6 @@ const CreateSurvey = () => {
       case (2):
           updateSurvey({
             ...newSurvey,
-            questions: {
             q2: question,
             a2: {
               a: answer1,
@@ -69,7 +64,6 @@ const CreateSurvey = () => {
               c: answer3,
               d: answer4
             }
-          }
           })
           setCurrentQuestion({
             ...currentQuestion,
@@ -84,7 +78,6 @@ const CreateSurvey = () => {
       case 3:
           updateSurvey({
             ...newSurvey,
-            questions: {
             q3: question,
             a3: {
               a: answer1,
@@ -92,7 +85,6 @@ const CreateSurvey = () => {
               c: answer3,
               d: answer4
             }
-          }
           })
           setCurrentQuestion({
             ...currentQuestion,
@@ -107,7 +99,6 @@ const CreateSurvey = () => {
       case 4:
           updateSurvey({
             ...newSurvey,
-            questions: {
             q4: question,
             a4: {
               a: answer1,
@@ -115,7 +106,6 @@ const CreateSurvey = () => {
               c: answer3,
               d: answer4
             }
-          }
           })
           setCurrentQuestion({
             ...currentQuestion,
@@ -130,7 +120,6 @@ const CreateSurvey = () => {
       case 5:
           updateSurvey({
             ...newSurvey,
-            questions: {
             q5: question,
             a5: {
               a: answer1,
@@ -138,7 +127,6 @@ const CreateSurvey = () => {
               c: answer3,
               d: answer4
             }
-          }
           })
           setCurrentQuestion({
             ...currentQuestion,

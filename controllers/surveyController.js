@@ -18,14 +18,7 @@ module.exports = {
         db.Surveys
           .create(req.body)
           .then(({ _id }) => {
-<<<<<<< HEAD
-            console.log(req.body)
-            console.log(_id)
-            console.log(req.body.createdBy)
-            return db.Users.findOneAndUpdate({ _id: req.body._id}, { $push: { createdBy: _id }})
-=======
             return db.Users.findOneAndUpdate({ _id: req.body.createdBy}, { $push: { createdBy: _id }})
->>>>>>> a30d56fc551628478f53cf92733c3181cd6f15cb
           })
           .then(dbModel => res.json(dbModel))
           .catch(err => console.log(err));

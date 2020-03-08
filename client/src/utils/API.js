@@ -7,7 +7,7 @@ export default {
   },
 
   signup: function(signupInfo) {
-    return axios.post("/api/users/signup", signupInfo);
+    return axios.post("/api/users", signupInfo);
   },
 
   isLoggedIn: function() {

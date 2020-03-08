@@ -3,6 +3,7 @@ import React from "react";
 import BarChart from "../components/BarChart";
 import { Grid, Segment } from "semantic-ui-react";
 import SingleSurvey from "../components/SingleSurvey";
+import TakeSurvey from "../components/TakeSurvey";
 
 function Results() {
   return (
@@ -10,14 +11,14 @@ function Results() {
      <Grid.Row stretched>
         <Grid.Column>
           <Segment>
-<<<<<<< HEAD
+
           <BarChart />
-=======
+
           <SingleSurvey />
           </Segment>
           <Segment>
           <SingleSurvey />
->>>>>>> 13a6ebd8258ffc4c1aad7eb93e48a4a792968465
+
           </Segment>
         </Grid.Column>
         <Grid.Column>

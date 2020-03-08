@@ -87,7 +87,8 @@ code {
   padding: 30px;
   padding-bottom: 50px;
   color: lightgray;
-  font-size: 40px;
+  font-size: 20px;
+  color: #256eec;
   border-radius: 10px;
   border-color: rgb(180, 58, 58) 5px;
   margin-bottom: 20px;

@@ -8,7 +8,7 @@ const buttonStyle = {
     width: 400,
     opacity: "90%",
     color: "#ef291f",
-    paddingTop: "175px",
+    paddingTop: "30px",
     color:  "rgb(180, 58, 58)",
     fontSize: "16pt",
     
@@ -23,8 +23,8 @@ const TakeSurveyBtn = () => {
    
     return (
        
-        <Button style={buttonStyle} href= "/Survey" >
-        <Link>Start Survey Now!</Link>
+        <Button style={buttonStyle}  >
+        <Link to="/Survey">Start Survey Now!</Link>
         </Button>
         
     )

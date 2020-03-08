@@ -12,7 +12,7 @@ export default {
   },
 
   update: function(updatedUser) {
-    return axios.put(`/api/users/user/${updatedUser.id}`, updatedUser)
+    return axios.put(`/api/users/${updatedUser.id}`, updatedUser)
   },
 
   isLoggedIn: function() {

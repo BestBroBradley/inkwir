@@ -5,7 +5,6 @@ import { Grid, Segment } from "semantic-ui-react";
 import SingleSurvey from "../components/SingleSurvey";
 import TakeSurvey from "../components/TakeSurvey";
 
-
 function Results() {
   return (
     <Grid columns={2} divided>

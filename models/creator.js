@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const CreatorSchema = new Schema({
     createdBy: {
-        type: Array,
+        type: String,
         required: true
     }
 });

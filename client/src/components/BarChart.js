@@ -4,9 +4,11 @@ import { Chart } from "react-google-charts";
 
 
 
+
 const BarChart = () => (
 
 <Chart
+    id="barChart"
     width={'80rem'}
     height={'30rem'}
     chartType="BarChart"

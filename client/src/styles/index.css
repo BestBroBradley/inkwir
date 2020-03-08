@@ -93,10 +93,13 @@ code {
   border-color: rgb(180, 58, 58) 5px;
   margin-bottom: 20px;
   opacity: 90%;
+  align-items: center;
 }
 
-.answers {
+#answers {
   color: #ef291f;
+  align-items: center;
+  font-size: 18pt;
 }
 
 #buttonClr {
@@ -155,4 +158,13 @@ label {
   border-radius: 10px;
   width: 40rem;
   margin: 5rem;
+}
+
+#barChart {
+  background: rgb(5, 15, 30);
+  border-radius: 10px;
+}
+
+#fontPatrol {
+  font-size: 20px !important;
 }

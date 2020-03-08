@@ -27,10 +27,10 @@ function Results() {
         </Grid.Column>
         <Grid.Column>
           <Segment>
-          <TakeSurvey />
+          <SingleSurvey />
           </Segment>
           <Segment>
-          <TakeSurvey />
+          <SingleSurvey />
           </Segment>
           <Segment>
           <SingleSurvey />

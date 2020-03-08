@@ -18,10 +18,13 @@ module.exports = {
         db.Surveys
           .create(req.body)
           .then(({ _id }) => {
+            console.log(req.body)
+            console.log(_id)
+            console.log(req.body.createdBy)
             return db.Users.findOneAndUpdate({ _id: req.body._id}, { $push: { createdBy: _id }})
           })
           .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
+          .catch(err => console.log(err));
     },
     remove: function(req,res) {
         db.Surveys

@@ -25,6 +25,6 @@ export default {
 
   submitsurvey: function (survey) {
     console.log(survey)
-    return axios.post("/api/survey")
+    return axios.post("/api/surveys", survey)
   }
 };

@@ -1,13 +1,18 @@
 import axios from "axios";
+import { CommentActions } from "semantic-ui-react";
 
 export default {
-  // logs in user
+
   login: function(loginInfo) {
     return axios.post("/api/users/login", loginInfo);
   },
 
   signup: function(signupInfo) {
-    return axios.post("/api/users/signup", signupInfo);
+    return axios.post("/api/users/", signupInfo);
+  },
+
+  update: function(updatedUser) {
+    return axios.put(`/api/users/${updatedUser.id}`, updatedUser)
   },
 
   isLoggedIn: function() {
@@ -16,5 +21,10 @@ export default {
 
   logout: function() {
     return axios.get("/api/users/logout")
+  },
+
+  submitsurvey: function (survey) {
+    console.log(survey)
+    return axios.post("/api/survey")
   }
 };

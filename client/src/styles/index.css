@@ -64,17 +64,26 @@ code {
   border-color: rgb(5, 15, 30);
 }
 
+.ui.form {
+  background: rgb(5, 15, 30) !important;
+  border-radius: 10px;
+  width: 40rem;
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+
 #updateAccount {
-  background-color: rgb(5, 15, 30);
-  border-color: rgb(5, 15, 30);
   height: 100%;
-  width: 500rem;
+  width: 100%;
   padding: 20px;
   opacity: 90%;
+  color: #ef291f;
+  padding-bottom: 4rem;
 }
 
 #questions {
   background: rgb(5, 15, 30);
+  width: 80rem;
   padding: 30px;
   padding-bottom: 50px;
   color: lightgray;
@@ -105,11 +114,27 @@ code {
 }
 
 h3 {
+  color: #256eec;
+}
+
+h4 {
   color: #ef291f;
+}
+
+h2 {
+  color: #ef291f;
+}
+
+h5 {
+  color: #256eec;
 }
 
 h1 {
   color: white;
+}
+
+label {
+  color: #ef291f !important;
 }
 
 #homeButton {
@@ -126,4 +151,8 @@ h1 {
 
 .ui.segment {
   opacity: 100%;
+  background: rgb(5, 15, 30);
+  border-radius: 10px;
+  width: 40rem;
+  margin: 5rem;
 }

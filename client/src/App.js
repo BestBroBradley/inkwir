@@ -3,6 +3,7 @@ import './styles/App.css';
 import './styles/footer.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Account from "./pages/Account";
+import NewAccount from "./pages/NewAccount";
 import Create from "./pages/Create";
 import Homepage from "./pages/Homepage";
 import Loggedin from "./pages/Loggedin";
@@ -48,6 +49,10 @@ function App() {
     loggedIn: false,
     user: null,
     failureMessage: null
+  })
+
+  const [currentUser, updateCurrentUser] = useState({
+    currentuser: "",
   })
 
   const { email, username, password, age, nationality, gender, loggedIn } = userState
@@ -103,7 +108,7 @@ function App() {
         if (user.data.loggedIn) {
           setUserState({
             ...userState,
-            loggedIn: true,
+            loggedIn: false,
             user: user.data.user
           });
           console.log("log in successful");
@@ -129,6 +134,10 @@ function App() {
             ...userState,
             loggedIn: true,
             user: user.data.user
+          })
+          console.log(user)
+          updateCurrentUser({
+            currentuser: user.data.user
           });
         } else {
           console.log(user.data.message);
@@ -153,7 +162,7 @@ function App() {
   return (
     <Router>
       <Section>
-        <UserContext.Provider value={{ userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
+        <UserContext.Provider value={{ currentUser, userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
           <NavTabs />
           <Route exact path="/">
@@ -164,6 +173,9 @@ function App() {
           </Route>
           <Route exact path="/create">
             <Create />
+          </Route>
+          <Route exact path="/NewAccount">
+            <NewAccount />
           </Route>
           <Route exact path="/loggedin">
             <Loggedin />

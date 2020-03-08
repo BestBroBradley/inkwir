@@ -22,7 +22,7 @@ function HomepageAuth() {
             <Grid>
             <Grid.Row columns={1}>
                     <Grid.Column>
-                        <h2 id="welcome" >Welcome to <img src={"/logo-inkwir-lg.png"} /> (Inquire): Survey App!</h2>
+                        <h2 id="welcome" >Welcome to <img src={"/logo-inkwir-large.png"} /> (Inquire): Survey App!</h2>
                         <h4 id="describe">The best place on the web for taking and making surveys!</h4>
                     </Grid.Column>
             </Grid.Row>   

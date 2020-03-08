@@ -14,6 +14,7 @@ const CreateSurvey = () => {
   const [currentQuestion, setCurrentQuestion] = useState({
     title: "",
     category: "",
+    createdBy: "",
     question: "",
     answer1: "",
     answer2: "",
@@ -23,7 +24,6 @@ const CreateSurvey = () => {
   })
 
   const { questionNumber, title, category, question, answer1, answer2, answer3, answer4 } = currentQuestion
-
 
   const [newSurvey, updateSurvey] = useState({
     q1: "",
@@ -49,6 +49,7 @@ const CreateSurvey = () => {
         })
         setCurrentQuestion({
           ...currentQuestion,
+          createdBy: currentUser.currentuser._id,
           question: "",
           answer1: "",
           answer2: "",
@@ -159,15 +160,22 @@ const CreateSurvey = () => {
 }
 
   const handleSelect = (item) => {
-    updateSurvey({
-      ...newSurvey,
+    setCurrentQuestion({
+      ...currentQuestion,
       category: item
     })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    API.submitsurvey(newSurvey)
+    console.log(newSurvey)
+    const submitSurvey = {
+      title: currentQuestion.title,
+      category: currentQuestion.category,
+      createdBy: currentQuestion.createdBy,
+      questions: [newSurvey]
+    }
+    API.submitsurvey(submitSurvey)
   }
 
   const handleInputChange = (event) => {

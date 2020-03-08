@@ -26,5 +26,25 @@ export default {
   submitsurvey: function (survey) {
     console.log(survey)
     return axios.post("/api/surveys", survey)
+<<<<<<< HEAD
+=======
+  },
+
+  submitResult: function (id, freshResults) {
+    console.log(freshResults)
+    return axios.put(`/api/surveys/${id}`, freshResults)
+  },
+
+  getOne: function (id) {
+    return axios.get(`/api/surveys/:${id}`)
+  },
+
+  getAll: function () {
+    return axios.get("/api/surveys")
+  },
+
+  searchOne: function () {
+    return axios.get("/api/surveys/:title")
+>>>>>>> a30d56fc551628478f53cf92733c3181cd6f15cb
   }
 };

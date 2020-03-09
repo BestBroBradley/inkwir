@@ -40,7 +40,7 @@ export const Question = (props) => {
           <Radio
             label={a1.b}
             name='b'
-            value={a1.b}
+            value='b'
             checked={resultState.a1 === "b"}
             onChange={() => handleChange("a1", "b")}
             className="answers"
@@ -50,7 +50,7 @@ export const Question = (props) => {
           <Radio
             label={a1.c}
             name='c'
-            value={a1.c}
+            value='c'
             checked={resultState.a1 === "c"}
             onChange={() => handleChange("a1", "c")}
             className="answers"
@@ -60,7 +60,7 @@ export const Question = (props) => {
           <Radio
             label={a1.d}
             name='d'
-            value={a1.d}
+            value='d'
             checked={resultState.a1 === "d"}
             onChange={() => handleChange("a1", "d")}
             className="answers"
@@ -78,9 +78,9 @@ export const Question = (props) => {
           <Radio
             label={a2.a}
             name='a'
-            value={a2.a}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "1"})}
-            // onChange={handleChange}
+            value='a'
+            checked={resultState.a2 === "a"}
+            onChange={() => handleChange("a2", "a")}
             className="answers"
           />
         </Form.Field>
@@ -88,9 +88,9 @@ export const Question = (props) => {
           <Radio
             label={a2.b}
             name='b'
-            value={a2.b}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "2"})}
-            // onChange={handleChange}
+            value='b'
+            checked={resultState.a2 === "b"}
+            onChange={() => handleChange("a2", "b")}
             className="answers"
           />
         </Form.Field>
@@ -98,9 +98,9 @@ export const Question = (props) => {
           <Radio
             label={a2.c}
             name='c'
-            value={a1.c}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "3"})}
-            // onChange={handleChange}
+            value='c'
+            checked={resultState.a2 === "c"}
+            onChange={() => handleChange("a2", "c")}
             className="answers"
           />
         </Form.Field> : null}
@@ -108,9 +108,9 @@ export const Question = (props) => {
           <Radio
             label={a2.d}
             name='d'
-            value={a2.d}
-          // checked={() => updateSurveyState({ ...surveyState, answer: "4"})}
-          // onChange={handleChange}
+            value='d'
+            checked={resultState.a2 === "d"}
+            onChange={() => handleChange("a2", "d")}
             className="answers"
           />
         </Form.Field> : null}
@@ -126,9 +126,9 @@ export const Question = (props) => {
           <Radio
             label={a3.a}
             name='a'
-            value={a3.a}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "1"})}
-            // onChange={handleChange}
+            value='a'
+            checked={resultState.a3 === "a"}
+            onChange={() => handleChange("a3", "a")}
             className="answers"
           />
         </Form.Field>
@@ -136,9 +136,9 @@ export const Question = (props) => {
           <Radio
             label={a3.b}
             name='b'
-            value={a3.b}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "2"})}
-            // onChange={handleChange}
+            value='b'
+            checked={resultState.a3 === "b"}
+            onChange={() => handleChange("a3", "b")}
             className="answers"
           />
         </Form.Field>
@@ -146,9 +146,9 @@ export const Question = (props) => {
           <Radio
             label={a3.c}
             name='c'
-            value={a3.c}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "3"})}
-            // onChange={handleChange}
+            value='c'
+            checked={resultState.a3 === "c"}
+            onChange={() => handleChange("a3", "c")}
             className="answers"
           />
         </Form.Field> : null}
@@ -156,9 +156,9 @@ export const Question = (props) => {
           <Radio
             label={a3.d}
             name='d'
-            value={a3.d}
-          // checked={() => updateSurveyState({ ...surveyState, answer: "4"})}
-          // onChange={handleChange}
+            value='d'
+            checked={resultState.a3 === "d"}
+            onChange={() => handleChange("a3", "d")}
             className="answers"
           />
         </Form.Field> : null}
@@ -175,9 +175,9 @@ export const Question = (props) => {
           <Radio
             label={a4.a}
             name='a'
-            value={a4.a}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "1"})}
-            // onChange={handleChange}
+            value='a'
+            checked={resultState.a4 === "a"}
+            onChange={() => handleChange("a4", "a")}
             className="answers"
           />
         </Form.Field>
@@ -185,9 +185,9 @@ export const Question = (props) => {
           <Radio
             label={a4.b}
             name='b'
-            value={a4.b}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "2"})}
-            // onChange={handleChange}
+            value='b'
+            checked={resultState.a4 === "b"}
+            onChange={() => handleChange("a4", "b")}
             className="answers"
           />
         </Form.Field>
@@ -195,9 +195,9 @@ export const Question = (props) => {
           <Radio
             label={a4.c}
             name='c'
-            value={a4.c}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "3"})}
-            // onChange={handleChange}
+            value='c'
+            checked={resultState.a4 === "c"}
+            onChange={() => handleChange("a4", "c")}
             className="answers"
           />
         </Form.Field> : null}
@@ -205,9 +205,9 @@ export const Question = (props) => {
           <Radio
             label={a4.d}
             name='d'
-            value={a4.d}
-          // checked={() => updateSurveyState({ ...surveyState, answer: "4"})}
-          // onChange={handleChange}
+            value='d'
+            checked={resultState.a4 === "d"}
+            onChange={() => handleChange("a4", "d")}
             className="answers"
           />
         </Form.Field> : null}
@@ -223,9 +223,9 @@ export const Question = (props) => {
           <Radio
             label={a5.a}
             name='a'
-            value={a5.a}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "1"})}
-            // onChange={handleChange}
+            value='a'
+            checked={resultState.a5 === "a"}
+            onChange={() => handleChange("a5", "a")}
             className="answers"
           />
         </Form.Field>
@@ -233,9 +233,9 @@ export const Question = (props) => {
           <Radio
             label={a5.b}
             name='b'
-            value={a5.b}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "2"})}
-            // onChange={handleChange}
+            value='b'
+            checked={resultState.a5 === "b"}
+            onChange={() => handleChange("a5", "b")}
             className="answers"
           />
         </Form.Field>
@@ -243,9 +243,9 @@ export const Question = (props) => {
           <Radio
             label={a5.c}
             name='c'
-            value={a5.c}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "3"})}
-            // onChange={handleChange}
+            value='c'
+            checked={resultState.a5 === "c"}
+            onChange={() => handleChange("a5", "c")}
             className="answers"
           />
         </Form.Field> : null}
@@ -253,9 +253,9 @@ export const Question = (props) => {
           <Radio
             label={a5.d}
             name='d'
-            value={a5.d}
-          // checked={() => updateSurveyState({ ...surveyState, answer: "4"})}
-          // onChange={handleChange}
+            value='d'
+            checked={resultState.a5 === "d"}
+            onChange={() => handleChange("a5", "d")}
             className="answers"
           />
         </Form.Field> : null}

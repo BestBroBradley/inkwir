@@ -23,8 +23,10 @@ const TakeSurveyBtn = () => {
    
     return (
        
+
         <Button style={buttonStyle} to= "/Survey" >
         <Link><h2>Start Survey Now!</h2></Link>
+
         </Button>
         
     )

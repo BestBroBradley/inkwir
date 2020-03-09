@@ -79,7 +79,7 @@ const TakeSurvey = () => {
         </Form.Field>
       </Form>
       <Button id="buttonClr" >Next question!</Button>
-      <Button id="buttonClr" >Submit your survey!</Button>
+      <Button id="buttonClr" > End this survey!</Button>
     </div>
   )
 }

@@ -38,7 +38,7 @@ function Results() {
 
 
     );
-          
+    }           
           
 export default Results;
 // const Example = () => {

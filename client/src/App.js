@@ -21,7 +21,9 @@ var sectionStyle = {
   marginTop: -20,
   width: "100%",
   height: "1000px",
-  backgroundImage: `url("${Background}")`
+  backgroundImage: `url("${Background}")`,
+  backgroundRepeat: "repeat",
+  backgroundAttachment: 'fixed',
 };
 
 class Section extends Component {

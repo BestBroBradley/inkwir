@@ -31,7 +31,7 @@ const TakeSurveyBtn = () => {
         </Button>
         
     )
-}
+};
 
 
 export default TakeSurveyBtn;

@@ -143,6 +143,7 @@ const CreateSurvey = () => {
         break;
       default:
         break;
+        
     }
 }
 

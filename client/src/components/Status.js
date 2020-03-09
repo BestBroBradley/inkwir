@@ -7,7 +7,8 @@ const buttonStyle = {
     height: 400,
     width: 400,
     opacity: "90%",
-    color: "#ef291f"
+    color: "#ef291f",
+    borderRadius: "10px"
 
 
 

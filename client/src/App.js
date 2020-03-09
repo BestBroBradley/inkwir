@@ -20,8 +20,12 @@ import API from './utils/API'
 var sectionStyle = {
   marginTop: -20,
   width: "100%",
-  height: "1000px",
-  backgroundImage: `url("${Background}")`
+  height: "4000px",
+  backgroundImage: `url("${Background}")`,
+  backgroundRepeat: "repeat",
+  backgroundAttachment: 'fixed',
+  backgroundRepeat: "repeat-x",
+  
 };
 
 class Section extends Component {

@@ -1,46 +1,56 @@
-import React from "react";
+import React, { useRef }from "react";
 // import  { Chart } from "react-google-charts";
 import BarChart from "../components/BarChart";
-import { Grid, Segment } from "semantic-ui-react";
+
+import { Grid, Container } from "semantic-ui-react";
 import SingleSurvey from "../components/SingleSurvey";
 import TakeSurvey from "../components/TakeSurvey";
 
-function Results() {
-  return (
-    <Grid columns={2} divided>
-     <Grid.Row stretched>
-        <Grid.Column>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-        </Grid.Column>
-        <Grid.Column>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-        </Grid.Column>
-        <Grid.Column>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-          <Segment>
-          <SingleSurvey />
-          </Segment>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-          
-          
-  );
-}
 
+import GroupResults from "../components/GroupResults";
+
+function Results() {
+
+    return (
+        <Container>
+            <Grid>
+                <Grid.Row columns={1}>
+
+                    <Grid.Column >
+                        <h5 id="answers">Title:{}</h5>
+
+                        <h5 id="fontPatrol">Category:{}</h5>
+
+                        <h5 id="fontPatrol"> Your Username:{} </h5>
+
+
+                        <BarChart />
+                        <br></br>
+                        <GroupResults />
+                        <GroupResults />
+                        <GroupResults />
+                        <GroupResults />
+                        <GroupResults />
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+        </Container>
+
+
+    );
+}          
+          
 export default Results;
+// const Example = () => {
+//   const Results = useRef();
+//   return (
+//     <div>
+//       <ReactToPrint
+//         trigger={() => <button>Print this out!</button>}
+//         content={() => Results.current}
+//       />
+//       <ComponentToPrint ref={Results} />
+//     </div>
+//   );
+// };
+// export default Results;

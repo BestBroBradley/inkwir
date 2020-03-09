@@ -38,7 +38,7 @@ module.exports = {
           return db.Surveys.findOneAndUpdate({ _id: req.params.id }, { results: dbModel._id }, { new: true });
         })
         .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+        .catch(err => console.log(err));
     },
     getResults: function(req,res) {
         db.Surveys

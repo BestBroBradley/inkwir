@@ -164,6 +164,7 @@ const CreateSurvey = () => {
       questions: [newSurvey]
     }
     API.submitsurvey(submitSurvey)
+    
   }
 
   const handleInputChange = (event) => {

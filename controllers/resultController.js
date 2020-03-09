@@ -20,11 +20,12 @@ module.exports = {
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     },
-    remove: function(req,res) {
-        db.Results
-          .findById({ _id: req.params.id })
-          .then(dbModel => dbModel.remove())
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-    }
+    updateResults: function(req,res) {
+      console.log(req.body.results)
+      console.log(req.params.id)
+      db.Results
+        .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => console.log(err));
+    },
 };

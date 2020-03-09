@@ -1,5 +1,5 @@
-import React, { useEffect, useState, Component } from 'react';
-import { Input, Form, Radio, Button } from 'semantic-ui-react';
+import React, { useEffect, useState } from 'react';
+import { Form, Button } from 'semantic-ui-react';
 import "../styles/index.css"
 import API from '../utils/API';
 import { Question } from "./Question"
@@ -14,14 +14,6 @@ const TakeSurvey = () => {
     });
   }, [])
 
-  const handleChange = (event) => {
-    const { name, value } = event.target
-    updateSurveyState({
-      ...surveyState,
-      [name]: value
-    })
-  }
-
   return (
     <>
       {surveyState.map(survey =>
@@ -31,10 +23,8 @@ const TakeSurvey = () => {
 
             <h5>Category:{survey.category}</h5>
 
-            <Question questions={survey.questions} />
+            <Question _id={survey._id} results={survey.results} questions={survey.questions} />
           </Form>
-          <Button id="buttonClr" >Next question!</Button>
-          <Button id="buttonClr" >Submit your survey!</Button>
         </div>)}
     </>
   )

@@ -9,6 +9,7 @@ import {
 import UserContext from "../utils/UserContext"
 
 
+
 const Header = () => {
 
 
@@ -28,8 +29,10 @@ const Header = () => {
             { userState.loggedIn ? 
             (<><Dropdown.Item to="/update">Update Account</Dropdown.Item>
             <Dropdown.Item onClick={logout}>Sign Out</Dropdown.Item></>) :
-            (<><Dropdown.Item to="/account">Create an Account</Dropdown.Item>
-            <Dropdown.Item to="/signup">Sign In</Dropdown.Item></>) }
+
+            (<><Dropdown.Item href="/newaccount">Create an Account</Dropdown.Item>
+            <Dropdown.Item href="/account">Sign In</Dropdown.Item></>) }
+
           </Dropdown.Menu>
         </Dropdown>
       </Container>

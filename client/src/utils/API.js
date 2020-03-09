@@ -28,20 +28,20 @@ export default {
     return axios.post("/api/surveys", survey)
   },
 
-  // submitResult: function (id, freshResults) {
-  //   console.log(freshResults)
-  //   return axios.put(`/api/surveys/${id}`, freshResults)
-  // },
+  submitResult: function (id, freshResults) {
+    console.log(freshResults)
+    return axios.put(`/api/surveys/${id}`, freshResults)
+  },
 
-  // getOne: function (id) {
-  //   return axios.get(`/api/surveys/:${id}`)
-  // },
+  getOne: function (id) {
+    return axios.get(`/api/surveys/:${id}`)
+  },
 
-  // getAll: function () {
-  //   return axios.get("/api/surveys")
-  // },
+  getAll: function () {
+    return axios.get("/api/surveys")
+  },
 
-  // searchOne: function () {
-  //   return axios.get("/api/surveys/:title")
-  // }
+  searchOne: function () {
+    return axios.get("/api/surveys/:title")
+  }
 };

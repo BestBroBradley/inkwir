@@ -11,6 +11,7 @@ const buttonStyle = {
     paddingTop: "145px",
     fontColor:  "rgb(180, 58, 58)",
     fontSize: "16pt",
+    borderRadius: "10px"
     
     
 

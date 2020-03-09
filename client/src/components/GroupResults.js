@@ -3,66 +3,57 @@ import { Input, Form, Radio } from 'semantic-ui-react';
 import "../styles/index.css"
 
 
-export default class SingleSurvey extends Component {
+export default class GroupResults extends Component {
     state = {};
     handleChange = (e, { value }) => this.setState({ value })
   
 render() {
 
      return (
-       <div>
-        <Form id="questions">
-          <h3 id="answers">Title:{}</h3>
-         
-          <h5>Category:{}</h5> 
-         
-          <h5> Your Username:{} </h5>
-      
-      
+       <div id="questions">  
          <Input transparent placeholder='Question' /> 
            <br/>
            <br/>
-         <Form.Field id="answers">
-          <Radio
+         <Form.Field id="answers"
             label='answer 1'
             name='radioGroup'
             value='this'
             checked={this.state.value === 'this'}
             onChange={this.handleChange}
-            id="answers"
-          />
+            class="answers"
+          >
         </Form.Field>
-        <Form.Field>
-          <Radio
+        <br></br>
+        <Form.Field
             label='answer 2'
             name='radioGroup'
             value='that'
             checked={this.state.value === 'this'}
             onChange={this.handleChange}
             id="answers"
-          />
+          >
         </Form.Field>
-        <Form.Field>
-          <Radio
+        <br></br>
+        <Form.Field
             label='answer 3'
             name='radioGroup'
             value='that'
             checked={this.state.value === 'this'}
             onChange={this.handleChange}
             id="answers"
-          />
+          >
         </Form.Field>
-        <Form.Field>
-          <Radio
+        <br></br>
+        <Form.Field
             label='answer 4'
             name='radioGroup'
             value='that'
             checked={this.state.value === 'this'}
             onChange={this.handleChange}
-            id="answers"
-          />
+            
+          >
         </Form.Field>
-      </Form>
+     
      
     </div>
   )

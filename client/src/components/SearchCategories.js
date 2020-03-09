@@ -57,7 +57,7 @@ const SearchCategories = () => {
         <br />
         <br />
         <br />
-        <br />
+        
         
         <h2>Search for a survey title</h2>
         <Input placeholder='Search...' />

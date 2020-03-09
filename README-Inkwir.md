@@ -33,6 +33,7 @@ npm i semantic-ui-react axios
 
 *Ability to cross-reference Demographics and location
 *Must take 10 surveys for you can create your own
+\*Responsive
 
 #### Status:
 

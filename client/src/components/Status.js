@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Button, Card, Progress } from 'semantic-ui-react'
 import UserContext from "../utils/UserContext"
+import { Link } from "react-router-dom"
 
 const buttonStyle = {
     background: "rgb(5, 15, 30)",
@@ -14,15 +15,6 @@ const buttonStyle = {
 
 } 
 
-const statusBarStyle = {
-    padding: "20rem"
-}
-
-const progress1 = {
-    background: "#ffffff"
-
-}
-
 const Status = () => {
    
     const { userState } = useContext(UserContext)
@@ -30,19 +22,12 @@ const Status = () => {
     console.log(userState.surveysTaken.length)
 
     return (
-        <Button style={buttonStyle} >
-            <div> 
-                    <h3>Survey Status</h3>
-                    <h5>Complete 10 surveys to unlock the
-                    ability to create your own surveys!</h5>
-      
-                    { userState.surveysTaken.length ? (<Progress className='progress1' color='#ef291f'  value={userState.surveysTaken.length} total='10' progress='ratio' />) : null}
-                    { userState.surveysTaken.length >= 10 ? (<h4 color= 'grey'>Create your own surveys!</h4>) : null } 
-               
-            </div>
+        <Button style={buttonStyle} to= "/create" >
+           
+                  <Link><h3>Create your own survey!</h3></Link>   
         </Button>
     )
-}
+};
 
 
 export default Status;

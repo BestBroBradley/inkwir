@@ -9,7 +9,8 @@ const buttonStyle = {
     opacity: "90%",
     color: "#ef291f",
     paddingTop: "10px",
-    fontSize: "16pt"
+    fontSize: "16pt",
+    borderRadius: "10px"
  
     
     

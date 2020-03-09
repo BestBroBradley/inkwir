@@ -18,9 +18,9 @@ import UserContext from './utils/UserContext';
 import API from './utils/API'
 
 var sectionStyle = {
-  marginTop: -20,
+  paddingTop: "5rem",
   width: "100%",
-  height: "5000px",
+  height: "2500px",
   backgroundImage: `url("${Background}")`,
   backgroundRepeat: "repeat",
   backgroundAttachment: 'fixed',
@@ -168,7 +168,7 @@ function App() {
       <Section>
         <UserContext.Provider value={{ currentUser, userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
-          <NavTabs />
+         
           <Route exact path="/">
             <Homepage />
           </Route>

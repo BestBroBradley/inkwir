@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useRef }from "react";
 // import  { Chart } from "react-google-charts";
 import BarChart from "../components/BarChart";
+
 import { Grid, Container } from "semantic-ui-react";
 import SingleSurvey from "../components/SingleSurvey";
 import TakeSurvey from "../components/TakeSurvey";
+
+
 import GroupResults from "../components/GroupResults";
 
 function Results() {
+
     return (
         <Container>
             <Grid>
@@ -34,6 +38,19 @@ function Results() {
 
 
     );
-}
-
+          
+          
 export default Results;
+// const Example = () => {
+//   const Results = useRef();
+//   return (
+//     <div>
+//       <ReactToPrint
+//         trigger={() => <button>Print this out!</button>}
+//         content={() => Results.current}
+//       />
+//       <ComponentToPrint ref={Results} />
+//     </div>
+//   );
+// };
+// export default Results;

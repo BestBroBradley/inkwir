@@ -23,7 +23,7 @@ export const Question = (props) => {
 
   const checkQ1 = (a1 ? (
     <div>
-        <Input transparent placeholder={q1} />
+        <Input transparent fluid placeholder={q1} />
         <br />
         <br />
         <Form.Field id="answers">
@@ -71,7 +71,7 @@ export const Question = (props) => {
   const checkQ2 = (a2 ? (
     <div>
         <br/><hr/><br/>
-        <Input transparent placeholder={q2} />
+        <Input transparent fluid placeholder={q2} />
         <br />
         <br />
         <Form.Field id="answers">
@@ -119,7 +119,7 @@ export const Question = (props) => {
   const checkQ3 = (a3 ? (
     <div>
       <br/><hr/><br/>
-        <Input transparent placeholder={q3} />
+        <Input transparent fluid placeholder={q3} />
         <br />
         <br />
         <Form.Field id="answers">
@@ -168,7 +168,7 @@ export const Question = (props) => {
   const checkQ4 = (a4 ? (
     <div>
       <br/><hr/><br/>
-        <Input transparent placeholder={q4} />
+        <Input transparent fluid placeholder={q4} />
         <br />
         <br />
         <Form.Field id="answers">
@@ -216,7 +216,7 @@ export const Question = (props) => {
   const checkQ5 = (a5 ? (
     <div>
       <br/><hr/><br/>
-        <Input transparent placeholder={q5} />
+        <Input transparent fluid placeholder={q5} />
         <br />
         <br />
         <Form.Field id="answers">

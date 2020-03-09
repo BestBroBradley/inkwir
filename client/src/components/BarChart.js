@@ -12,7 +12,7 @@ const BarChart = () => (
     width={'80rem'}
     height={'30rem'}
     chartType="BarChart"
-    loader={<div>Loading Chart</div>}
+    loader={<div><h1>Loading Chart</h1></div>}
     data={[
       ['Q1', 'A1', 'A2', 'A3', 'A4'],
       ['How often do you shop for groceries in a week?', 10, 3, 9, 20],

@@ -12,7 +12,8 @@ const divStyle = {
   // position: relative
 
 }
-const options = [
+export const SearchInput = (props) => {
+  const options = [
   { key: 'travel', text: 'Travel', value: 'travel' },
   { key: 'food', text: 'Food', value: 'food' },
   { key: 'sports', text: 'Sports', value: 'sports' },
@@ -22,16 +23,16 @@ const options = [
   { key: 'super', text: 'Superpowers/Just for Fun', value: 'super' },
   { key: 'misc', text: 'Miscellaneous', value: 'misc' },
 ]
-  
-const SearchInput = () => (
+
+const handleChange = (event) => {
+  props.handleSelect(event.target.textContent)
+}
+
+  return (  
   <Menu compact>
-    <Dropdown text='Categories' options={options} simple item />
+<Dropdown name="category" onChange={handleChange} placeholder='Categories' search selection options={options} />
   </Menu>
-)
-
-
-
-
+)}
 
 const SearchCategories = () => {
 
@@ -56,7 +57,7 @@ const SearchCategories = () => {
         <br />
         <br />
         <br />
-        <br />
+        
         
         <h2>Search for a survey title</h2>
         <Input placeholder='Search...' />

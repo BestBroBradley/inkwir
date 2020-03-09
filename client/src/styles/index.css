@@ -35,8 +35,8 @@ code {
   width: 800px;
   margin-left: 10rem;
   padding: 30px;
-  border: rgb(5, 15, 30) 5px;
-  color: black;
+  border-radius: 10px;
+  font-size: 20px !important;
 }
 
 #logInCard {

@@ -33,9 +33,8 @@ const TakeSurvey = () => {
             <h5>Category:{survey.category}</h5>
 
             <Question questions={survey.questions} />
+          
           </Form>
-          <Button id="buttonClr" >Next question!</Button>
-          <Button id="buttonClr" >Submit your survey!</Button>
         </div>)}
     </>
 

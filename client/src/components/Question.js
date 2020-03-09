@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Input, Form, Radio } from 'semantic-ui-react'
+import { Input, Form, Radio, Button } from 'semantic-ui-react'
 import '../styles/index.css'
 
 export const Question = (props) => {
@@ -269,6 +269,8 @@ export const Question = (props) => {
       {checkQ3}
       {checkQ4}
       {checkQ5}
+      <Button id="buttonClr" >Next question!</Button>
+    <Button id="buttonClr" >Submit your survey!</Button>
     </>
   )
 }

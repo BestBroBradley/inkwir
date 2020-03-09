@@ -8,8 +8,6 @@ router.route("/")
 router
   .route("/:id")
   .get(resultController.findById)
-  .put(resultController.addResults)
-  .delete(resultController.remove)
-
+  .put(resultController.updateResults)
 
 module.exports = router;

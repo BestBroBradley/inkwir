@@ -1,5 +1,4 @@
 import axios from "axios";
-import { CommentActions } from "semantic-ui-react";
 
 export default {
 
@@ -30,11 +29,11 @@ export default {
 
   submitResult: function (id, freshResults) {
     console.log(freshResults)
-    return axios.put(`/api/surveys/${id}`, freshResults)
+    return axios.put(`/api/results/${id}`, freshResults)
   },
 
   getOne: function (id) {
-    return axios.get(`/api/surveys/:${id}`)
+    return axios.get(`/api/surveys/${id}`)
   },
 
   getAll: function () {

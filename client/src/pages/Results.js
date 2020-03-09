@@ -41,11 +41,11 @@ function Results() {
 
                         <BarChart />
                         <br></br>
+                        {/* <GroupResults />
                         <GroupResults />
                         <GroupResults />
                         <GroupResults />
-                        <GroupResults />
-                        <GroupResults />
+                        <GroupResults /> */}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

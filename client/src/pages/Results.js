@@ -38,11 +38,12 @@ function Results() {
 
 
     );
-<<<<<<< HEAD
+
+
     }           
-=======
-}          
->>>>>>> 6d7f4cb77d4a1ad588ec232480f6ce0229c241c1
+        
+
+
           
 export default Results;
 // const Example = () => {

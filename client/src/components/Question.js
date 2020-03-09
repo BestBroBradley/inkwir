@@ -5,9 +5,19 @@ import '../styles/index.css'
 export const Question = (props) => {
   console.log(props)
 
-  // const [resultState, setResultState] = useState({
-  //   a1
-  // })
+  const handleChange = (question, value) => {
+    setResultState({
+      ...resultState,
+      [question]: value
+    })
+  }
+ 
+  const [resultState, setResultState] = useState({
+    a1: "",
+    a2: "",
+    a3: "",
+    a4: ""
+  })
 
   const { a1, q1, a2, q2, a3, q3, a4, q4, a5, q5 } = props.questions[0]
 
@@ -20,9 +30,9 @@ export const Question = (props) => {
           <Radio
             label={a1.a}
             name='a'
-            value={a1.a}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "1"})}
-            // onChange={handleChange}
+            value="a"
+            checked={resultState.a1 === "a"}
+            onChange={() => handleChange("a1", "a")}
             className="answers"
           />
         </Form.Field>
@@ -31,8 +41,8 @@ export const Question = (props) => {
             label={a1.b}
             name='b'
             value={a1.b}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "2"})}
-            // onChange={handleChange}
+            checked={resultState.a1 === "b"}
+            onChange={() => handleChange("a1", "b")}
             className="answers"
           />
         </Form.Field>
@@ -41,8 +51,8 @@ export const Question = (props) => {
             label={a1.c}
             name='c'
             value={a1.c}
-            // checked={() => updateSurveyState({ ...surveyState, answer: "3"})}
-            // onChange={handleChange}
+            checked={resultState.a1 === "c"}
+            onChange={() => handleChange("a1", "c")}
             className="answers"
           />
         </Form.Field> : null}
@@ -51,8 +61,8 @@ export const Question = (props) => {
             label={a1.d}
             name='d'
             value={a1.d}
-          // checked={() => updateSurveyState({ ...surveyState, answer: "4"})}
-          // onChange={handleChange}
+            checked={resultState.a1 === "d"}
+            onChange={() => handleChange("a1", "d")}
             className="answers"
           />
         </Form.Field> : null}

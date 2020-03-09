@@ -200,7 +200,7 @@ const CreateSurvey = () => {
         <Button onClick={handleSubmit} id="buttonClr">Submit your survey!</Button>
         </>
       ) : (
-        <h1>Please sign in to submit a survey</h1>
+        <h3>Please sign in to submit a survey</h3>
       )}
       
     </div>

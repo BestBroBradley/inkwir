@@ -20,7 +20,7 @@ import API from './utils/API'
 var sectionStyle = {
   marginTop: -20,
   width: "100%",
-  height: "4000px",
+  height: "5000px",
   backgroundImage: `url("${Background}")`,
   backgroundRepeat: "repeat",
   backgroundAttachment: 'fixed',

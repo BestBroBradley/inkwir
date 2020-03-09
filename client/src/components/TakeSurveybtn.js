@@ -8,7 +8,7 @@ const buttonStyle = {
     width: 400,
     opacity: "90%",
     color: "#ef291f",
-    paddingTop: "175px",
+    paddingTop: "30px",
     color:  "rgb(180, 58, 58)",
     fontSize: "16pt",
     
@@ -28,7 +28,7 @@ const TakeSurveyBtn = () => {
         </Button>
         
     )
-}
+};
 
 
 export default TakeSurveyBtn;

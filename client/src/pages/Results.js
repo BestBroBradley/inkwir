@@ -1,14 +1,17 @@
 import React, { useRef }from "react";
 // import  { Chart } from "react-google-charts";
 import BarChart from "../components/BarChart";
+
 import { Grid, Container } from "semantic-ui-react";
 import SingleSurvey from "../components/SingleSurvey";
 import TakeSurvey from "../components/TakeSurvey";
+
 
 import GroupResults from "../components/GroupResults";
 
 function Results() {
   return (
+
     <Container>
     <Grid>
       <Grid.Row columns={1}>
@@ -37,10 +40,13 @@ function Results() {
       </Grid.Row>
     </Grid>
     </Container>  
+
           
           
   );
 }
+          
+          
 export default Results;
 // const Example = () => {
 //   const Results = useRef();

@@ -29,7 +29,7 @@ render() {
             value='this'
             checked={this.state.value === 'this'}
             onChange={this.handleChange}
-            class="answers"
+            id="answers"
           />
         </Form.Field>
         <Form.Field>
@@ -59,7 +59,7 @@ render() {
             value='that'
             checked={this.state.value === 'this'}
             onChange={this.handleChange}
-            
+            id="answers"
           />
         </Form.Field>
       </Form>

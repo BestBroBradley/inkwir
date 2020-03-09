@@ -20,6 +20,15 @@ module.exports = {
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     },
+    addResults: function(req,res) {
+      db.Results
+        .create(req.body)
+        .then(dbModel => {
+          return db.Surveys.findOneAndUpdate({ _id: req.params.id }, { results: dbModel._id }, { new: true });
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
     remove: function(req,res) {
         db.Results
           .findById({ _id: req.params.id })

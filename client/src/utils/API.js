@@ -43,5 +43,13 @@ export default {
 
   searchOne: function () {
     return axios.get("/api/surveys/:title")
+  },
+
+  getAllResults: function () {
+    return axios.get(`/api/results`)
+  },
+
+  getResult: function (id) {
+    return axios.get(`/api/results/:${id}`)
   }
 };

@@ -23,6 +23,7 @@ const TakeSurvey = () => {
   }
 
   return (
+
     <>
       {surveyState.map(survey =>
         <div>
@@ -37,6 +38,7 @@ const TakeSurvey = () => {
           <Button id="buttonClr" >Submit your survey!</Button>
         </div>)}
     </>
+
   )
 }
 

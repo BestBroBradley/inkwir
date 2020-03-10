@@ -18,14 +18,14 @@ import UserContext from './utils/UserContext';
 import API from './utils/API'
 
 var sectionStyle = {
-  marginTop: -20,
+  marginTop: "20px",
   width: "100%",
+  paddingTop: "5rem",
   height: "5000px",
   backgroundImage: `url("${Background}")`,
   backgroundRepeat: "repeat",
   backgroundAttachment: 'fixed',
   backgroundRepeat: "repeat-x",
-  
 };
 
 class Section extends Component {
@@ -168,7 +168,7 @@ function App() {
       <Section>
         <UserContext.Provider value={{ currentUser, userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
-          <NavTabs />
+          {/* <NavTabs /> */}
           <Route exact path="/">
             <Homepage />
           </Route>

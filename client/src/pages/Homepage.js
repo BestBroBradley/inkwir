@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import LoginButton from "../components/LoginButton";
 import TakeSurvey from "../components/TakeSurveybtn";
-import {Grid, Container} from "semantic-ui-react";
+import {Grid, Container, Responsive} from "semantic-ui-react";
 import UserContext from "../utils/UserContext";
 
 

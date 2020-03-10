@@ -18,6 +18,7 @@ import UserContext from './utils/UserContext';
 import API from './utils/API'
 
 var sectionStyle = {
+
   marginTop: "20px",
   width: "100%",
   paddingTop: "5rem",
@@ -168,7 +169,7 @@ function App() {
       <Section>
         <UserContext.Provider value={{ currentUser, userState, logout, isLoggedIn, handleSignup, handleLogin, handleInputChange }}>
           <Menu />
-          {/* <NavTabs /> */}
+
           <Route exact path="/">
             <Homepage />
           </Route>

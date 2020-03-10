@@ -35,17 +35,8 @@ function Results() {
                 <Grid.Row columns={1}>
 
                     <Grid.Column >
-                        <h5 id="answers">Title: {title}</h5>
-
-                        <h5 id="fontPatrol">Category: {category}</h5>
-
                         <BarChart />
                         <br></br>
-                        {/* <GroupResults />
-                        <GroupResults />
-                        <GroupResults />
-                        <GroupResults />
-                        <GroupResults /> */}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
